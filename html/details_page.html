@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>activity</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/detail.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/mainpage.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript">
+    var w,h,className;
+    function getSrceenWH(){
+      w = $(window).width();
+      h = $(window).height();
+      $('#dialogBg').width(w).height(h);
+    }
+
+    window.onresize = function(){  
+      getSrceenWH();
+    }  
+    $(window).resize();  
+
+    $(function(){
+      getSrceenWH();
+
+
+      $('.box a').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg').fadeIn(300);
+        $('#dialog_add').removeAttr('class').addClass('animated '+className+'').fadeIn();
+      });
+
+
+      $('.claseDialogBtn').click(function(){
+        $('#dialogBg').fadeOut(300,function(){
+          $('#dialog_add').addClass('bounceOutUp').fadeOut();
+        });
+      });
+    });
+  </script>
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          
+          <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" alt="" width="102" height="27"></a> </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="myInverseNavbar2">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../index.html">首页</a></li>
+              <li><a href="searching.html">查找活动</a></li>
+              <li><a href="create.html">创建活动</a></li>
+              <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">地区 <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="../index.html">上海</a></li>
+                  <li><a href="../index.html">不限</a></li>
+                </ul>
+              </li> 
+              <li>
+                <a id="login_p" href="login.html">登录</a>
+              </li>
+              <li><p>|</p></li>
+              <li>    
+                <a id="register_p" href="register.html">注册</a>
+              </li>
+            </ul>
+            
+          <!--
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">个人中心 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="personal_data.html">个人信息</a></li>
+            <li><a href="personal_joined.html">已参加活动</a></li>
+            <li><a href="personal_applied.html">已报名活动</a></li>
+            <li><a href="personal_comments.html">评价活动</a></li>
+            <li><a href="personal_mymessages.html">我的消息</a></li>
+            <li><a href="personal_group.html">我的小组</a></li>
+            <li class="divider"></li>
+            <li><a href="#">注销</a></li>
+          </ul>
+        </li>
+    -->
+
+</div>
+<!-- /.navbar-collapse --> 
+</div>
+<!-- /.container-fluid --> 
+</nav>
+<div style="height: 72px;"></div>
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-xs">
+      <div class="xxxx">
+        <div class="content_head_l">
+          <img src="../img/02.jpg" alt="海报海报photo">
+        </div>
+
+        <div class="content_head_r">
+          <div class="detail_title">
+            <h2>
+              华东师范大学第二届创新创业大赛
+            </h2>
+          </div>
+          <hr>
+
+          <div id="detail_block">
+           <div class="detail">
+            <div class="title_txt">开始时间：<span>2016-11-23 13:00</span></div>
+
+          </div>
+          <div class="detail">
+            <div class="title_txt">截止报名时间：<span>2016-10-07 24:00</span></div>
+
+          </div>
+          
+
+          <div class="detail">
+            <div class="title_txt">地点：<span>
+              上海市普陀区中山北路3663号华东师范大学
+            </span></div>
+            
+          </div>
+
+          <div id="detail_joinnum" class="detail" ms-controller="detail_join_party_list_controller">
+
+            <div class="title_txt">报名人数：<span class="num">已有30人报名</span>
+              <span id="limit_num">限80人报名</span></div>
+
+            </div>
+            
+            <form action="" method="post">
+              <p class="center">
+                <input type="submit" id="apply" value="我要报名">
+              </p>
+
+            </form>
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9 col-md-12">
+      <div class="detail_description">
+        <div class="hdxq">
+          <div class="information"><p>活动详情</p> </div>
+          <div class="context"><p>我们在用户注册时提供一级兴趣选择（一级兴趣包括：娱乐、体育、科技、美食、军事、历史、社会、旅游、影视、其他等，一级兴趣下再细化二级兴趣），多级区域选择，及其所处年龄层等信息。根据以上用户数据收集，推荐其喜好的活动。在推荐活动时，优先考虑二级兴趣标签及所在区域，其次推荐一级兴趣活动。同时，我们也会向用户提供实时热门活动，以及好友活动动态，避免单一推荐过少或无推荐活动的情况发生。活动来源一部分根据时下热门，由网站管理员创建，一部分由用户（活动组织者）创建。用户创建的活动会有12个小时的审核时间，过审后才可在网站上发布（我们会根据活动举办时间优先审核最近的活动）。创建活动时，用户可以选择一级兴趣标签，二级兴趣标签由管理员审核后进行分类，并在审核过后告知用户分类到哪一级标签下。而前期用户在注册时，必须填写推荐人的唯一ID。</p></div>
+        </div>
+
+        <div class="cyyh">
+        <div class="information"><p>参与用户</p> </div>
+
+
+         
+
+
+
+
+      <div class="context">
+
+        <ul class="member_review_list">
+          <li class="member_review_main">
+            <div class="member_review_person">
+              <div class="person_headphoto">
+                <a href="html/details_page.html" ><img src="../img/tx.jpg" alt="" width="70px" height="70px"></a>
+              </div>
+              <div class="person_id_name">
+                <a href="html/details_page.html" ><h5>金鑫</h5></a>
+              </div>
+            </div>
+          </li>
+
+          <li class="member_review_main">
+            <div class="member_review_person">
+              <div class="person_headphoto">
+                <a href="html/details_page.html" ><img src="../img/tx.jpg" alt="" width="70px" height="70px"></a>
+              </div>
+              <div class="person_id_name">
+                <a href="html/details_page.html" ><h5>金鑫</h5></a>
+              </div>
+            </div>
+          </li>
+
+          <li class="member_review_main">
+            <div class="member_review_person">
+              <div class="person_headphoto">
+                <a href="html/details_page.html" ><img src="../img/tx.jpg" alt="" width="70px" height="70px"></a>
+              </div>
+              <div class="person_id_name">
+                <a href="html/details_page.html" ><h5>金鑫</h5></a>
+              </div>
+            </div>
+          </li>
+<li>
+<div class="box">
+          <div class="demo">
+            <div class="add_member"><a class="bounceIn" href="javascript:;">
+              <i class="icon-plus-sign icon-5x" style="width: auto"></i>
+            </a>
+          </div>
+        </div>
+        <div id="dialogBg"></div>
+        <div id="dialog_add" class="animated">
+          <img class="dialogIco" width="50" height="50" src="../img/ico.png" alt="" />
+          <div class="dialogTop">
+            <a href="javascript:;" class="claseDialogBtn" style=" text-decoration: none;color: black;">关闭</a>
+          </div>
+          <form action="" method="post" id="editForm">
+          
+           <ul class="friends_list">
+              <li><label for="checkbox1">小石榴</label>
+              <input type="checkbox" name="" id="checkbox1"></li>
+              <li><label for="checkbox2">小石榴</label>
+              <input type="checkbox" name="" id="checkbox2"></li>
+              <li><label for="checkbox3">小石榴</label>
+              <input type="checkbox" name="" id="checkbox3"></li>
+              <li><label for="checkbox4">小石榴</label>
+              <input type="checkbox" name="" id="checkbox4"></li>
+              <li><label for="checkbox5">小石榴</label>
+              <input type="checkbox" name="" id="checkbox5"></li>
+              <li><label for="checkbox6">小石榴</label>
+              <input type="checkbox" name="" id="checkbox6"></li>
+           </ul>
+
+
+            <p class="button_invite">
+              <input type="submit" value="发送邀请" class="submitBtn" >
+            </p>
+
+          </form>
+        </div>
+      </div>
+  
+</li>
+
+        </ul>
+        
+
+
+
+      </div>
+    </div>
+
+    <div class="hdxq">
+      
+      <div class="information"><p>用户评论</p> </div>
+      <div class="context">
+        <div class="pinglun">
+          <div class="comment_left">
+          <img src="../img/tx.jpg" alt="" width="70px" height="70px" class="member_review_main">
+        </div>
+        <div class="comment_right">
+          <form action="#" method="post" class="member_review_main">
+            <textarea name="comment" id="yh_comments" placeholder="来说两句吧~" style="resize:none"></textarea>
+            <div class="submit_comment">
+              <input type="submit" id="submit_comment" value="发表评论">
+            </div>
+          </form>
+        </div>
+        </div>
+        
+        <div class="comments">
+        <div>
+          <div class="comment_left">
+          <img src="../img/adobe.png" alt="" width="60px" height="60px" class="comment_left_img">
+        </div>
+        <div class="comment_right">
+          <div class="comment_right_name"><h5>金鑫</h5></div>
+          <div class="comment_right_time"><h5>2016-11-19 19：00 发表</h5></div>
+        </div>
+        </div>
+          <div class="comment_frame"><p>1.  工作人员1：（负责台上电脑控制）
+a)  开场视频播放
+b)  控制PPT
+c)  抽奖时调出微博墙
+d)  协助选手更换电脑
+e)  看工作人员2指示，4分半时放提示音1；5分钟时放提示音2
+f)  提问环节3分钟时，若主持人没有看到，轻声提醒主持人.  工作人员1：（负责台上电脑控制）
+a)  开场视频播放
+b)  控制PPT
+c)  抽奖时调出微博墙
+d)  协助选手更换电脑
+e)  看工作人员2指示，4分半时放提示音1；5分钟时放提示音2
+f)  提问环节3分钟时，若主持人没有看到，轻声提醒主持人.  工作人员1：（负责台上电脑控制）
+a)  开场视频播放
+b)  控制PPT
+c)  抽奖时调出微博墙
+d)  协助选手更换电脑
+e)  看工作人员2指示，4分半时放提示音1；5分钟时放提示音2
+f)  提问环节3分钟时，若主持人没有看到，轻声提醒主持人
+</p></div>
+       
+          
+        </div>
+         <div class="comments">
+        <div>
+          <div class="comment_left">
+          <img src="../img/adobe.png" alt="" width="60px" height="60px" class="comment_left_img">
+        </div>
+        <div class="comment_right">
+          <div class="comment_right_name"><h5>金鑫</h5></div>
+          <div class="comment_right_time"><h5>2016-11-19 19：00 发表</h5></div>
+        </div>
+        </div>
+          <div class="comment_frame"><p>1.  工作人员1：（负责台上电脑控制）
+a)  开场视频播放
+b)  控制PPT
+c)  抽奖时调出微博墙
+d)  协助选手更换电脑
+e)  看工作人员2指示，4分半时放提示音1；5分钟时放提示音2
+f)  提问环节3分钟时，若主持人没有看到，轻声提醒主持人. 
+</p></div>
+       
+          
+        </div>
+        
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+</div>
+
+<!--<div class="sidebar">-->
+<div class="col-lg-3 col-md-6 col-md-offset-3 col-lg-offset-0">
+  <div class="changeheight"></div>
+  <div class="sidebar_hot">
+   <div class="well">
+          <div class="hot_hd">
+            <p>热门活动</p>
+          </div>
+          
+          <div class="hot_hd_content">
+            
+            <div class="content_li">
+              <div class="li_left">
+                <a href="details_page.html" ><img src="../img/adobe.png" alt="" width="60px" height="60px"></a>
+              </div>
+              <div class="li_right">
+                <a class="li_right_title" href="details_page.html"><h5>校运会</h5></a>
+                <p>2016-11-2 9:00</p>
+              </div>
+            </div>
+            
+
+
+            <div class="content_li">
+              <div class="li_left">
+                <a href="details_page.html" ><img src="../img/adobe.png" alt="" width="60px" height="60px"></a>
+              </div>
+              <div class="li_right">
+                <a class="li_right_title" href="details_page.html"><h5>华东师范大学第二届创新创业大赛</h5></a>
+                <p>2016-11-23 13:00</p>
+              </div>
+            </div>
+
+
+            <div class="content_li">
+              <div class="li_left">
+                <a href="details_page.html" ><img src="../img/转笔.jpg" alt="" width="60px" height="60px"></a>
+              </div>
+              <div class="li_right">
+                <a class="li_right_title" href="details_page.html"><h5>可怕的辅修</h5></a>
+                <p>2016-10-28 18:00</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<hr>
+
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © JoinUs Web. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="../js/jquery-3.1.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/stickUp.min.js"></script>
+<script type="text/javascript">
+              //initiating jQuery
+              jQuery(function($) {
+                $(document).ready( function() {
+                  //enabling stickUp on the '.navbar-wrapper' class
+                  $('.sidebar_hot').stickUp();
+                });
+              });
+
+            </script>
+          </body>
+          </html>
+
+

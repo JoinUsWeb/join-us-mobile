@@ -1,0 +1,80 @@
+body{
+
+   background:url(../img/02.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+ul{
+	padding: 0;
+	margin:0;
+	list-style-type: none;
+}
+
+#login_form fieldset, #register_form fieldset{
+	background-color:rgba(255,255,255,0.7);
+	width: 420px;
+	margin: 50px auto 150px auto;
+	padding: 50px 20px;
+	/*background: ;*/
+	border: 1px solid #c9d0de;
+	border-radius: 15px;
+	
+}
+#login_form h3, #register_form h3{
+	font-size: 28px ; 
+	color:rgb(100,100,100);
+	text-align: center;
+	margin: 0 0 40px 0;
+	/*text-shadow: 0px 2px 0px #f2f2f2;*/
+}
+#login_form label, #register_form label{
+	float: left;
+	clear: left;
+	margin: 5px 10px 0 20px;
+	width: 95px;
+	text-align: right;
+	font-size: 18px;
+	
+	color: rgb(100,100,100);
+	/*text-shadow: 0px 2px 0px #f2f2f2;#5E768D*/
+}
+#login_form input, #register_form input{
+	width: 200px;
+	height: 36px;
+	padding: 1px 8px 0px 8px;
+
+	background:#fff ;
+	border-radius: 5px;
+	
+	font-size: 16px;
+	color:black;
+	/*text-shadow: 0px -1px 0px #38506b;*/
+
+}
+
+#email_error,#psd_error,#nickname_error,#confirm_error,#number_error{
+	margin: 3px 0 0 135px;
+	height: 30px;
+
+}
+#login_form input[type=submit], #register_form input[type=submit]{
+	width: 120px;
+	height: 40px;
+	border: 1px solid #556f8c;
+	cursor: pointer;
+	color: azure;
+	background:#5E768D;
+	
+}
+.words{
+	float: right;
+	margin: 20px 60px 0 0;
+}
+ hr{
+	border-top:1px solid #1a2b3c;
+}
+.words a:hover {
+  text-decoration: none;
+}

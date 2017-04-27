@@ -1,0 +1,157 @@
+/*body{
+    font-family: "微软雅黑";
+    font-size: 16px;
+    font-weight: normal;
+}
+*/
+.frame{
+    height: 50px;
+    margin: 1% 0;
+    overflow-x:hidden;
+    overflow-y: hidden;
+    margin-bottom: auto;
+    background-color: #6E8B3D;
+    color:white;
+    /*border: 1px solid #6E8B3D;*/
+	border-radius: 5px;
+}
+
+.title{
+    display:inline-block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    color: aliceblue;
+    font-size: 16px;
+}
+
+.style{
+    width: 1130px;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+.searching li{
+    font-size: 16px;
+    color: #fff;
+    padding: 5px;
+    width: 100px;
+    height:50px;
+    line-height: 40px;
+    float: left;
+    margin-right: 2px;
+    display: block;
+    text-align: center;
+}
+
+a:link.thisover{
+    color:aliceblue;
+    text-decoration:none;
+}
+
+a:visited.thisover{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+a:hover.thisover{
+    color:#EEE9E9;/*#66cd00rgb(205,237,18)*/
+    text-decoration: none;
+}
+
+a:active.thisover{
+    color: white;
+    text-decoration: none;
+}
+
+.search_out{
+    background-color:#EDEDED;
+    /*padding: 1%;
+   
+    border-color: seashell;
+        border: 1px solid rgb(221,221,221);
+	border-radius: 5px;*/
+    
+}
+
+.search_main{
+    width: 500px
+    height:180px;
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 0;
+    border: 1px solid rgb(221,221,221);
+	border-radius: 5px;;
+}
+
+.search_main_img{
+    margin-top: 20px;
+    float: left;
+    display:block;
+    padding:15px;
+    margin: 0;
+    
+}
+
+.search_main_div{
+    float:left;
+    text-align: left;
+}
+
+
+.hd_name{
+    text-align: left;
+    font-size: 19px;
+    padding: 2px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.hd_creat{
+    margin: 0;
+    padding: 2px;
+    text-align: left;
+    /*padding-top: 2%;*/
+    font-size: 14px;
+}
+
+.hd_label
+.hd_time
+.people_num{
+    padding: 2px;
+    margin: 2px;
+    text-align: left;
+    font-size: 15px;
+    color: grey;
+}
+
+
+#frame3{
+    margin-bottom: 30px;
+}
+
+.hd_name a,.hd_creat a{
+ text-decoration: none;
+ color: rgb(51,51,51);
+ }
+
+.hd_name a:visited {
+ text-decoration: none;
+ }
+.hd_name a:hover {
+ text-decoration: none;
+ color:rgb(100,149,237);
+ }
+.hd_name a:active {
+ text-decoration: none;
+ font-size: 14px;
+ font-weight: bold;
+ }
+.stress{
+    background-color:#EEAD0E;
+    
+}
