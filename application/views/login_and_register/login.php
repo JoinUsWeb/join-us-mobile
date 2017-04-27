@@ -1,8 +1,8 @@
-<div id="container">
+﻿<div id="container">
 
     <?php echo form_open("login/", array('id' => 'login_form')); ?>
     <fieldset>
-        <h3>登录</h3>
+        <h3>登录-mobile</h3>
         <ul>
             <li>
                 <label for="email" class="title">邮箱：</label>
