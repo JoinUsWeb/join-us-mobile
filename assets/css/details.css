@@ -1,0 +1,29 @@
+td{
+	vertical-align: top;
+	padding:5px 0;
+}
+.title{
+	width:28%;
+	
+    
+	color:#333333;
+	font-weight: bold;
+}
+.inf_show{
+    padding: 15px;
+}
+.apply{
+	margin-left:32%;
+	width:36%;
+}
+.users{
+	padding:0 15px ;
+}
+.person_headphoto img{
+	border-radius: 50%;
+}
+.person_id_name h5{
+	text-align: center;
+	color:#545454;
+	font-size: 14px;
+}

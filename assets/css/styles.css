@@ -2,7 +2,7 @@
 
 /* Reset */
 html{ -webkit-tap-highlight-color:rgba(0,0,0,0);}
-body{ font-family:'Nanum Gothic',/*'Nanum Gothic','Malgun Gothic','맑은 고딕','돋움','dotum',*/'AppleGothic','sans-serif'; font-size:12px; font-weight:400; color:#555555; line-height:1.5;}
+body{ /*font-family:'Nanum Gothic','Nanum Gothic','Malgun Gothic','맑은 고딕','돋움','dotum',*/'AppleGothic','sans-serif'; font-size:14px; font-weight:400; color:#555555; line-height:1.5;}
 a{ color:#555555; text-decoration:none;}
 *,*:before,*:after{ -webkit-box-sizing:border-box; box-sizing:border-box; margin:0; padding:0; -webkit-text-size-adjust:none;}
 h1,h2,h3,h4,h5,h6,input,select,textarea,button{ font-size:inherit;}
