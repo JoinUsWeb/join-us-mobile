@@ -696,8 +696,8 @@ select {
 }
 [class*="am-u-"] {
   width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0em;
+  padding-right: 0em;
   float: left;
   position: relative;
 }
@@ -2051,7 +2051,7 @@ table code {
   white-space: normal;
 }
 th {
-  text-align: left;
+  text-align: center;
 }
 .am-table {
   width: 100%;
