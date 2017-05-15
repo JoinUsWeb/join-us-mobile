@@ -26,10 +26,7 @@ class Register extends CI_Controller
             return;
         }
 
-        $this->load->view('template/header', $data);
-        $this->load->view('template/nav');
         $this->load->view('login_and_register/register', $data);
-        $this->load->view('template/footer');
 
     }
 

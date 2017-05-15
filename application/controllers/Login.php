@@ -33,10 +33,7 @@ class Login extends CI_Controller
             return;
         }
 
-        $this->load->view('template/header', $data);
-        $this->load->view('template/nav');
         $this->load->view('login_and_register/login', $data);
-        $this->load->view('template/footer');
     }
 
 
