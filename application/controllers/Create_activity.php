@@ -27,7 +27,7 @@ class Create_activity extends CI_Controller
     public function index()
     {
         if (!isset($this->session->user_id))
-            redirect('login/index');
+            //redirect('login/index');
 
         $this->form_validation->set_rules('name', 'name', 'trim|required', array('required' => '请输入活动名称'));
         $this->form_validation->set_rules('date_start', 'date_start', 'required', array('required' => '请输入活动开始日期'));
@@ -46,19 +46,13 @@ class Create_activity extends CI_Controller
             $data = array('error' => '', 'title' => 'create activity');
             $data['first_label'] = $this->First_label_model->get_first_label();
             $data['page_name'] = "create";
-            $this->load->view('template/header', $data);
-            $this->load->view('template/nav');
             $this->load->view('activity_related/create_activity', $data);
-            $this->load->view('template/footer');
         } else if (!$this->upload->do_upload('poster')) {
             if ($this->upload->error_msg[0] != 'You did not select a file to upload.') {
                 $data = array('error' => $this->upload->display_errors(), 'title' => 'create activity');
                 $data['first_label'] = $this->First_label_model->get_first_label();
                 $data['page_name'] = "create";
-                $this->load->view('template/header', $data);
-                $this->load->view('template/nav');
                 $this->load->view('activity_related/create_activity', $data);
-                $this->load->view('template/footer');
             } else {
                 $data = $this->input->post();
                 if ($data['second_label_id'] == 0) {

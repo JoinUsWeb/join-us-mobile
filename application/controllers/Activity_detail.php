@@ -41,10 +41,7 @@ class Activity_detail extends CI_Controller
 
             $this->update_recommend_value($_SESSION['user_id'], $data['activity']['second_label_id'], $this->browse_base);
         }
-        $this->load->view('template/header', $data);
-        $this->load->view('template/nav');
         $this->load->view('activity_related/activity_detail', $data);
-        $this->load->view('template/footer');
     }
 
     public function enter($activity_id)

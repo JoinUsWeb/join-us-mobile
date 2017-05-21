@@ -7,7 +7,7 @@
     <meta name="keywords" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Amaze UI Examples</title>
+    <title>登录</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/amazeui.css"); ?>">
@@ -69,44 +69,43 @@
             </ul>
             <div class="am-tabs-bd">
                 <div data-tab-panel-0 class="am-tab-panel">
-                    <form action="" class="am-form">
+                    <form action="<?php echo site_url('register'); ?>" method="post" class="am-form">
                         <fieldset>
                             <div class="am-form-group">
                                 <label for="doc-vld-name">E-mail</label>
-                                <input type="text" id="doc-vld-name" minlength="3" placeholder="Email Accounts" class="am-form-field" required/>
+                                <input name="_email" type="text" id="doc-vld-name" minlength="3" placeholder="Email Accounts" class="am-form-field" required/>
                             </div>
                             <div class="am-form-group">
                                 <label for="doc-vld-name">Nick Name</label>
-                                <input type="text" id="doc-vld-name" minlength="3" placeholder="User Name" class="am-form-field" required/>
+                                <input name="_nickName" type="text" id="doc-vld-name" minlength="3" placeholder="User Name" class="am-form-field" required/>
                             </div>
                             <div class="am-form-group">
                                 <label for="doc-vld-name">Password</label>
-                                <input type="password" id="doc-vld-name" minlength="3" placeholder="User Password" class="am-form-field" required/>
+                                <input name="_password" type="password" id="doc-vld-name" minlength="3" placeholder="User Password" class="am-form-field" required/>
                             </div>
                             <div class="am-form-group">
                                 <label for="doc-vld-name">Ponfirm Password</label>
-                                <input type="password" id="doc-vld-name" minlength="3" placeholder="Confirm Password" class="am-form-field" required/>
+                                <input name="_password2" type="password" id="doc-vld-name" minlength="3" placeholder="Confirm Password" class="am-form-field" required/>
                             </div>
                             <div class="am-form-group">
                                 <label for="doc-vld-name">Telephone</label>
-                                <input type="tel" id="doc-vld-name" minlength="3" placeholder="Telephone Number" class="am-form-field" required/>
+                                <input name="_phoneNumber" type="tel" id="doc-vld-name" minlength="3" placeholder="Telephone Number" class="am-form-field" required/>
                             </div>
                             <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required="">已同意使用条约 </label></div>
                             <button class="myapp-login-button am-btn am-btn-secondary" type="submit">SIGN IN</button>
                         </fieldset>
-                        <legend>Forgot Password?</legend>
                     </form>
                 </div>
                 <div data-tab-panel-1 class="am-tab-panel am-active">
-                    <form action="" class="am-form">
+                    <form action="<?php echo site_url('login'); ?>" method="post"  class="am-form">
                         <fieldset>
                             <div class="am-form-group">
                                 <label for="doc-vld-name">E-mail</label>
-                                <input type="text" id="doc-vld-name" minlength="3" placeholder="Email Accounts" class="am-form-field" required/>
+                                <input name="_email" type="text" id="doc-vld-name" minlength="3" placeholder="Email Accounts" class="am-form-field" required/>
                             </div>
                             <div class="am-form-group">
                                 <label for="doc-vld-name">Password</label>
-                                <input type="password" id="doc-vld-name" minlength="3" placeholder="User Password" class="am-form-field" required/>
+                                <input name="_password" type="password" id="doc-vld-name" minlength="3" placeholder="User Password" class="am-form-field" required/>
                             </div>
                             <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required="">已同意使用条约 </label></div>
                             <button class="myapp-login-button am-btn am-btn-secondary" type="submit">LOGIN IN</button>
@@ -131,7 +130,7 @@
 <!--[if lte IE 8 ]><!-->
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="<?php echo base_url('assets/js/amazeui.ie8polyfill.min.js'); ?>"></script>
+<script src="<?php echo base_url("assets/js/amazeui.ie8polyfill.min.js"); ?>"></script>
 <!--<![endif]-->
 <script src="<?php echo base_url("assets/js/amazeui.min.js"); ?>"></script>
 <script src="<?php echo base_url("assets/js/app.js"); ?>"></script>

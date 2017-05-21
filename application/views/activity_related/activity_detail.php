@@ -1,341 +1,296 @@
-<script type="text/javascript">
-    var w, h, className;
-    function getSrceenWH() {
-        w = $(window).width();
-        h = $(window).height();
-        $('#dialogBg').width(w).height(h);
-    }
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo $activity['name']?>—活动详情</title>
 
-    window.onresize = function () {
-        getSrceenWH();
-    }
-    $(window).resize();
+    <!--360 browser -->
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="wos">
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="<?php echo base_url("images/i/app.png"); ?>">
+    <!--Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url("images/i/app.png"); ?>">
+    <!--Win8 or 10 -->
+    <meta name="msapplication-TileImage" content="<?php echo base_url("images/i/app.png"); ?>">
+    <meta name="msapplication-TileColor" content="#e1652f">
 
-    $(function () {
-        getSrceenWH();
+    <link rel="icon" type="image/png" href="../images/i/favicon.png">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/amazeui.css"); ?>">
+    <link rel="stylesheet" href="<?php echo base_url("css/public.css"); ?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/details.css"); ?>">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
+    <!--<![endif]-->
+    <!--[if lte IE 8 ]>
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js">></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="<?php echo base_url("assets/js/amazeui.ie8polyfill.min.js"); ?>"></script>
+    <![endif]-->
+    <script src="<?php echo base_url("assets/js/amazeui.min.js"); ?>"></script>
+    <script src="<?php echo base_url("js/public.js"); ?>"></script>
+</head>
+<body>
 
+<header class="am-topbar am-topbar-fixed-top wos-header">
+    <div class="am-container">
+        <h1 class="am-topbar-brand">
+            <a href="<?php echo site_url("home"); ?>"><img src="<?php echo base_url("images/logo2.png"); ?>" alt=""></a>
+        </h1>
 
-        $('.box a').click(function () {
-            className = $(this).attr('class');
-            $('#dialogBg').fadeIn(300);
-            $('#dialog_add').removeAttr('class').addClass('animated ' + className + '').fadeIn();
-        });
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-warning am-show-sm-only"
+                data-am-collapse="{target: '#collapse-head'}">
+            <span class="am-sr-only">导航切换</span>
+            <span class="am-icon-bars"></span>
+        </button>
 
+        <div class="am-collapse am-topbar-collapse" id="collapse-head">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li class="am-active"><a href="#">首页</a></li>
+                <li><a href="<?php echo site_url("search_activity/index"); ?>">查找活动</a></li>
+                <li><a href="<?php echo site_url("create_activity/index"); ?>">创建活动</a></li>
+                <li class="am-dropdown" data-am-dropdown>
+                    <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+                        地区 <span class="am-icon-caret-down"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <!--<li class="am-dropdown-header">案例</li>
+                        <li><a href="<?php echo site_url("cases.html"); ?>">4. 全部案例</a></li>
+                        <li><a href="#">1. 游戏案例</a></li>
+                        <li><a href="#">2. 营销案例</a></li>-->
+                        <li><a href="#">上海</a></li>
+                        <li><a href="#">其他</a></li>
 
-        $('.claseDialogBtn').click(function () {
-            $('#dialogBg').fadeOut(300, function () {
-                $('#dialog_add').addClass('bounceOutUp').fadeOut();
-            });
-        });
-    });
-</script>
+                    </ul>
+                </li>
+            </ul>
 
-<div class="container">
-    <div class="row">
+            <div class="am-topbar-right">
+                <a href="<?php echo site_url("register/index"); ?>"><button class="am-btn am-btn-default am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>注册</button></a>
+            </div>
 
+            <div class="am-topbar-right">
+                <a href="<?php echo site_url("login/index"); ?>"><button class="am-btn am-btn-danger am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登录</button></a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="banner">
+    <div class="am-g am-container">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-8">
+            <div data-am-widget="slider" class="am-slider am-slider-c1" data-am-slider='{"directionNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <a href="events_show.html"><img src="<?php echo base_url($activity['poster']); ?>"></a>
+                        <div class="am-slider-desc"><?php echo $activity['name']; ?></div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-xs">
-            <div class="xxxx">
-                <div class="content_head_l">
-                    <img src="
-                    <?php echo base_url($activity['poster']); ?>" alt="海报海报photo">
-                </div>
+                    </li>
 
-                <div class="content_head_r">
-                    <div class="detail_title">
-                        <h2>
-                            <?php
-                            echo $activity['name'];
-                            ?>
-                        </h2>
-                    </div>
-                    <hr>
-
-                    <div id="detail_block">
-                        <div class="detail">
-                            <div class="title_txt">开始时间：<span>
-                                    <?php
-                                    echo $activity['activity_start'];
-                                    ?>
-                                </span></div>
-
-                        </div>
-                        <div class="detail">
-                            <div class="title_txt">截止报名时间：<span>
-                                    <?php
-                                    echo $activity['apply_expire'];
-                                    ?>
-                                </span></div>
-                        </div>
-
-
-                        <div class="detail">
-                            <div class="title_txt">地点：<span>
-                             <?php
-                             echo $activity['place'];
-                             ?>
-                            </span></div>
-                        </div>
-                        <div id="detail_joinnum" class="detail" ms-controller="detail_join_party_list_controller">
-
-                            <div class="title_txt">报名人数：<span class="num">已有
-                                    <?php
-                                    echo $activity['member_number'];
-                                    ?>
-                                    人报名</span>
-                                <span id="limit_num">限
-                                    <?php
-                                    echo $activity['amount_max'];
-                                    ?>
-                                    人报名</span></div>
-                        </div>
-
-                        <?php
-                        if ($activity['creator_id'] == $this->session->user_id) { ?>
-                            <form action="
-                            <?php
-                            echo site_url('activity_detail/index/' . $activity['id']);
-                            ?>" method="post">
-                                <p class="center">
-                                    <input type="submit" id="apply" value="结束活动">
-                                </p>
-                            </form>
-                        <?php } else if ($is_joined) { ?>
-                            <form action="
-                            <?php
-                            echo site_url('activity_detail/quit/' . $activity['id']);
-                            ?>" method="post">
-                                <p class="center">
-                                    <input type="submit" id="apply" value="退出活动">
-                                </p>
-                            </form>
-                        <?php } else if ($activity['member_number'] >= $activity['amount_max'])
-                            echo '<p>报名人数已满</p>';
-                        else { ?>
-                            <form action="
-                            <?php
-                            if (isset($this->session->user_id))
-                                echo site_url('activity_detail/enter/' . $activity['id']);
-                            else
-                                echo site_url('login/index');
-                            ?>" method="post">
-                                <p class="center">
-                                    <input type="submit" id="apply" value="我要报名">
-                                </p>
-                            </form>
-                        <?php } ?>
-                    </div>
-                </div>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-9 col-md-12">
-            <div class="detail_description">
-                <div class="hdxq">
-                    <div class="information"><p>活动详情</p></div>
-                    <div class="context"><p>
-                            <?php
-                            echo $activity['brief'];
-                            ?>
-                        </p></div>
-                </div>
-
-                <div class="cyyh">
-                    <div class="information"><p>参与用户</p></div>
-                    <div class="context">
-
-                        <ul class="member_review_list">
-                            <?php
-                            $count = 0;
-                            foreach ($member as $member_item) {
-                                $count = ($count + 1) % 8; ?>
-                                <li class="member_review_main">
-                                    <div class="member_review_person">
-                                        <div class="person_headphoto">
-                                            <a href="html/details_page.html"><img src="
-                                                    <?php
-                                                echo base_url($member_item['avatar']);
-                                                ?>" alt="" width="70px" height="70px"></a>
-                                        </div>
-                                        <div class="person_id_name">
-                                            <a href="html/details_page.html">
-                                                <h5>
-                                                    <?php
-                                                    echo $member_item['nick_name'];
-                                                    ?>
-                                                </h5></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <?php if ($count == 0) echo '<br/>';
-                            } ?>
-
-
-                            <li>
-                                <div class="box">
-                                    <div class="demo">
-                                        <div class="add_member"><a class="bounceIn" href="javascript:;">
-                                                <i class="icon-plus-sign icon-5x"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div id="dialogBg"></div>
-                                    <div id="dialog_add" class="animated">
-                                        <img class="dialogIco" width="50" height="50"
-                                             src="<?php echo base_url('img/ico.png') ?>" alt=""/>
-                                        <div class="dialogTop">
-                                            <a href="javascript:;" class="claseDialogBtn"
-                                               style=" text-decoration: none;color: black;">关闭</a>
-                                        </div>
-                                        <form action="" method="post" id="editForm">
-
-                                            <ul class="friends_list">
-                                                <li><label for="checkbox1">用户1</label>
-                                                    <input type="checkbox" name="" id="checkbox1"></li>
-                                                <li><label for="checkbox2">用户2</label>
-                                                    <input type="checkbox" name="" id="checkbox2"></li>
-                                                <li><label for="checkbox2">用户3</label>
-                                                    <input type="checkbox" name="" id="checkbox2"></li>
-                                                <li><label for="checkbox2">用户4</label>
-                                                    <input type="checkbox" name="" id="checkbox2"></li>
-                                                <li><label for="checkbox2">用户5</label>
-                                                    <input type="checkbox" name="" id="checkbox2"></li>
-                                                <li><label for="checkbox2">用户6</label>
-                                                    <input type="checkbox" name="" id="checkbox2"></li>
-                                            </ul>
-
-
-                                            <p class="button_invite">
-                                                <input type="submit" value="发送邀请" class="submitBtn">
-                                            </p>
-                                        </form>
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="hdxq">
-                    <div class="information"><p>用户评论</p></div>
-                    <div class="context">
-                        <div class="pinglun">
-                            <div class="comment_left">
-                                <img src="<?php echo base_url('img/IMG_1035.jpg') ?>" alt="" width="70px" height="70px"
-                                     class="member_review_main">
-                            </div>
-                            <div class="comment_right">
-                                <textarea name="comment" id="yh_comments" placeholder="来说两句吧~"
-                                          style="resize:none"></textarea>
-                                <div class="submit_comment">
-                                    <input type="button" id="submit_comment" value="发表评论">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <?php
-                        if (empty($comment))
-                            echo '暂时没有评论';
-                        else
-                            foreach ($comment as $comment_item) {
-                                ?>
-                                <div class="comments">
-                                    <div>
-                                        <div class="comment_left">
-                                            <img src="<?php echo base_url($comment_item['creator']['avatar']); ?>"
-                                                 alt="头像无法显示" width="60px" height="60px" class="comment_left_img">
-                                        </div>
-                                        <div class="comment_right">
-                                            <div class="comment_right_name"><h5>
-                                                    <?php echo $comment_item['creator']['nick_name'] ?></h5></div>
-                                            <div class="comment_right_time"><h5>
-                                                    <?php echo $comment_item['date_time']; ?>
-                                                    发表</h5></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="comment_frame"><p>
-                                            <?php
-                                            echo $comment_item['content'];
-                                            ?>
-                                        </p></div>
-                                </div>
-                                <?php
-                            }
-                        ?>
-
-                    </div>
-                </div>
+<div>
+    <div>
+        <div class="am-u-sm-12 am-u-md-0 am-u-lg-4 padding-none lrad">
+            <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" id="df_title">
+                <h2 class="am-titlebar-title ">
+                    活动详情
+                </h2>
             </div>
-        </div>
+            <div id="hdxq">
+                <table>
+                    <tr>
+                        <td class="title">活动主题：</td>
+                        <td>奥特曼教学</td>
+                    </tr>
+                    <tr>
+                        <td class="title">开始时间：</td>
+                        <td><?php echo $activity['activity_start']; ?></td>
+                    </tr>
+                    <tr>
+                        <td class="title">活动地点：</td>
+                        <td><?php echo $activity['place']; ?></td>
+                    </tr>
+                    <tr>
+                        <td class="title">报名人数：</td>
+                        <td>已有<?php echo $activity['member_number']; ?>人报名</td>
+                    </tr>
+                </table>
 
-        <!--<div class="sidebar">-->
-        <div class="col-lg-3 col-md-6 col-md-offset-3 col-lg-offset-0">
-            <div class="changeheight"></div>
-            <div class="sidebar_hot">
-                <div class="well">
-                    <div class="hot_hd">
-                        <p>热门活动</p>
-                    </div>
-                    <div class="hot_hd_content">
-                        <?php
-                        if (!empty($hot_activity))
-                            foreach ($hot_activity as $hot_activity_item) {
-                                ?>
-                                <div class="content_li">
-                                    <div class="li_left">
-                                        <a href="<?php echo site_url("activity_detail/index/" . $hot_activity_item["id"]) ?>">
-                                            <img src="<?php echo base_url($hot_activity_item['poster']) ?>" alt=""
-                                                 width="60px" height="60px"></a>
-                                    </div>
-                                    <div class="li_right">
-                                        <a class="li_right_title"
-                                           href="<?php echo site_url("activity_detail/index/" . $hot_activity_item["id"]) ?>">
-                                            <h5>
-                                                <?php
-                                                echo $hot_activity_item['name'];
-                                                ?>
-                                            </h5></a>
-                                        <p><?php
-                                            echo $hot_activity_item['activity_start'];
-                                            ?></p>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                    </div>
-                </div>
+
+
             </div>
+            <script>
+                if (document.body.scrollWidth>1024){
+                    var heightdiv=$('.am-slides img').height()-$('#df_title').height()-30
+                    $('#hdxq').css('height',heightdiv+'px')
+                }
+            </script>
         </div>
     </div>
 </div>
-<script src="<?php echo base_url("js/stickUp.min.js") ?>"></script>
-<script type="text/javascript">
-    //initiating jQuery
-    jQuery(function ($) {
-        $(document).ready(function () {
-            //enabling stickUp on the '.navbar-wrapper' class
-            $('.sidebar_hot').stickUp({
-                topMargin: '70px'
-            });
-        });
-    });
 
-    $("#submit_comment").click(function () {
-        var comment = $("#yh_comments").val();
-        $.ajax({
-            type: "post",
-            url: '<?php echo site_url("activity_detail/comment_check"); ?>',
-            data: {'comment': comment, 'activity_id': <?php echo $activity['id']; ?>},
-            success: function () {
-                location.reload(true);
-            }
-        });
-    })
+<div class="am-g am-container padding-none">
+    <div class="am-u-sm-12 am-u-md-12 am-u-lg-8 ">
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+            <h2 class="am-titlebar-title ">
+                活动介绍
+            </h2>
+        </div>
+        <div class="inf_show">
+            <p><?php echo $activity['brief']; ?></p>
+        </div>
+        <?php
+        if ($activity['creator_id'] == $this->session->user_id) { ?>
+            <form action="
+                            <?php
+            echo site_url('activity_detail/index/' . $activity['id']);
+            ?>" method="post">
+                <p class="center">
+                    <button type="submit" class="am-btn am-btn-primary apply" id="apply">结束活动</button>
+                </p>
+            </form>
+        <?php } else if ($is_joined) { ?>
+            <form action="
+                            <?php
+            echo site_url('activity_detail/quit/' . $activity['id']);
+            ?>" method="post">
+                <p class="center">
+                    <button type="submit" class="am-btn am-btn-primary apply" id="apply">退出活动</button>
+                </p>
+            </form>
+        <?php } else if ($activity['member_number'] >= $activity['amount_max'])
+            echo '<p>报名人数已满</p>';
+        else { ?>
+            <form action="
+            <?php
+            // 判断用户是否登陆，如果没有登录无法参加活动，跳转到到登录界面
+            if (isset($this->session->user_id))
+                echo site_url('activity_detail/enter/' . $activity['id']);
+            else
+                echo site_url('login/index');
+            ?>" method="post">
+                <p class="center">
+                    <button type="submit" class="am-btn am-btn-primary apply" id="apply">我要报名</button>
+                </p>
+            </form>
+        <?php } ?>
+    </div>
+    <div class="am-u-sm-0 am-u-md-0 am-u-lg-4 ">
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" style="margin-bottom: 20px">
+            <h2 class="am-titlebar-title ">
+                参与用户
+            </h2>
+        </div>
+        <div class="users">
+            <ul class="am-avg-sm-5 am-avg-md-5 am-avg-lg-5 am-thumbnails">
+                <li class="member_review_main">
+                    <div class="member_review_person">
+                        <div class="person_headphoto">
+                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
+                        </div>
+                        <div class="person_id_name">
+                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="member_review_main">
+                    <div class="member_review_person">
+                        <div class="person_headphoto">
+                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
+                        </div>
+                        <div class="person_id_name">
+                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="member_review_main">
+                    <div class="member_review_person">
+                        <div class="person_headphoto">
+                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
+                        </div>
+                        <div class="person_id_name">
+                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="member_review_main">
+                    <div class="member_review_person">
+                        <div class="person_headphoto">
+                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
+                        </div>
+                        <div class="person_id_name">
+                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="member_review_main">
+                    <div class="member_review_person">
+                        <div class="person_headphoto">
+                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
+                        </div>
+                        <div class="person_id_name">
+                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="member_review_main">
+                    <div class="member_review_person">
+                        <div class="person_headphoto">
+                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
+                        </div>
+                        <div class="person_id_name">
+                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="member_review_main">
+                    <div class="member_review_person">
+                        <div class="person_headphoto">
+                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
+                        </div>
+                        <div class="person_id_name">
+                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-</script>
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" style="margin-bottom: 20px">
+            <h2 class="am-titlebar-title ">
+                用户评论
+            </h2>
+        </div>
+
+        <!--<ul class="am-avg-sm-2 am-avg-md-2 am-avg-lg-2 am-thumbnails">
+            <li><img class="am-thumbnail" src="Temp-images/zbf.png" /></li>
+            <li><img class="am-thumbnail" src="Temp-images/zbf.png" /></li>
+        </ul>-->
+    </div>
+</div>
+
+
+<div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
+    <a href="#top" title="回到顶部">
+        <span class="am-gotop-title">回到顶部</span>
+        <i class="am-gotop-icon am-icon-chevron-up"></i>
+    </a>
+</div>
+<footer>
+    <div style="text-align: center">
+        <p>Copyright © JoinUs Web. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
