@@ -155,3 +155,23 @@ a:active.thisover{
     background-color:#EEAD0E;
     
 }
+
+/*mobile_css*/
+.searching_title{
+    text-align: center;
+    padding-top: 5px;
+    color: black;
+}
+
+.searching_title a{
+    color:black;
+}
+
+.searching_nav li{
+    width: 50%;
+    float: left;
+}
+
+.clear{
+    clear:both;
+} 

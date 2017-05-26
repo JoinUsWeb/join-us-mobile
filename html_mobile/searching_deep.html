@@ -26,6 +26,7 @@
     <link rel="icon" type="image/png" href="images/i/favicon.png">
     <link rel="stylesheet" href="../assets/css/amazeui.css">
     <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/searching.css">
 
     <!--[if (gte IE 9)|!(IE)]><!-->
     <script src="../assets/js/jquery.min.js"></script>
@@ -55,21 +56,18 @@
         <div class="am-collapse am-topbar-collapse" id="collapse-head">
             <ul class="am-nav am-nav-pills am-topbar-nav">
                 <li><a href="index.html">首页</a></li>
-                <li><a href="#">资讯</a></li>
-                <li><a href="#">专栏</a></li>
+                <li><a href="./searching.html" class="am-active">查找活动</a></li>
+                <li><a href="./create.html">创建活动</a></li>
                 <li class="am-dropdown" data-am-dropdown>
                     <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                        案例 <span class="am-icon-caret-down"></span>
+                        地区 <span class="am-icon-caret-down"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li class="am-dropdown-header">案例</li>
-                        <li><a href="#">1. 游戏案例</a></li>
-                        <li><a href="#">2. 营销案例</a></li>
-                        <li><a href="#">3. 工具案例</a></li>
+                        <li><a href="#">上海</a></li>
+                        <li><a href="#">其他</a></li>
                     </ul>
                 </li>
-                <li><a href="#">评测</a></li>
-                <li class="am-active"><a href="#">活动</a></li>
             </ul>
 
             <div class="am-topbar-right">
@@ -88,111 +86,110 @@
         <li><h3>兴趣板块：运动健身</h3></li>
     </ul>
 </div>
+    <div class="star am-container mcenter" id="num1"><span>兴趣标签</span></div>
+    
+    <div class="searching_nav" id="num0">
+        <ul>
+            <li><a href="#num1">游泳跑步</a></li>
+            <li><a href="#num2">有氧健身</a></li>
+            <li><a href="#num3">无氧健身</a></li>
+        </ul>
+    </div>
 
-<div class="star am-container mcenter"><span>往期活动</span></div>
+    <div class="clear"></div>
+    
+<div class="star am-container mcenter" id="num1"><span>游泳跑步</span></div>
 <div class="am-container">
     <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2 am-avg-md-3 am-avg-lg-3 am-gallery-default" data-am-gallery="{ pureview: true }" >
         <li>
             <div class="am-gallery-item">
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
+            </div>
+        </li>
+        <li>
+            <div class="am-gallery-item">
                 <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
                     <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
-                    <div class="events-btn">
-                        <button type="button" class="am-btn am-btn-primary">活动回顾</button>
-                    </div>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
             </div>
         </li>
         <li>
             <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-2.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg"  alt="某天 也许会相遇 相遇在这个好地方"/>
-                    <div class="events-btn">
-                        <button type="button" class="am-btn am-btn-default">活动回顾</button>
-                    </div>
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
             </div>
         </li>
         <li>
             <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-3.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"  alt="不要太担心 只因为我相信"/>
-                    <div class="events-btn">
-                        <button type="button" class="am-btn am-btn-default">活动回顾</button>
-                    </div>
+                <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
+                    </div>
+            </div>
+        </li><li>
+            <div class="am-gallery-item">
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
+                    </div>
             </div>
         </li>
         <li>
             <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-4.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"  alt="终会走过这条遥远的道路"/>
-                    <div class="events-btn">
-                        <button type="button" class="am-btn am-btn-default">活动回顾</button>
-                    </div>
+                <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-3.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"  alt="不要太担心 只因为我相信"/>
                     <div class="events-btn">
-                        <button type="button" class="am-btn am-btn-default">活动回顾</button>
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
                     </div>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-4.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"  alt="终会走过这条遥远的道路"/>
-                    <div class="events-btn">
-                        <button type="button" class="am-btn am-btn-default">活动回顾</button>
-                    </div>
-                </a>
             </div>
         </li>
     </ul>
     <div class="am-fr"></div>
     <button type="button" class="am-btn am-btn-default am-btn-block" style="margin: 20px 0">更多活动</button>
 </div>
-<div class="star am-container mcenter"><span><img src="images/star.png">媒体报道</span></div>
+    
+    <div class="star am-container mcenter" id="num2"><span>有氧健身</span></div>
 <div class="am-container">
-    <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-6 am-gallery-bordered" data-am-gallery="{  }" >
+    <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2 am-avg-md-3 am-avg-lg-3 am-gallery-default" data-am-gallery="{ pureview: true }" >
         <li>
             <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
                     <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
                     <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-2.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg"  alt="某天 也许会相遇 相遇在这个好地方"/>
-                    <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-3.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"  alt="不要太担心 只因为我相信"/>
-                    <h3 class="am-gallery-title">不要太担心 只因为我相信</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-4.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"  alt="终会走过这条遥远的道路"/>
-                    <h3 class="am-gallery-title">终会走过这条遥远的道路</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
-                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
             </div>
         </li>
         <li>
@@ -200,77 +197,143 @@
                 <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
                     <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
                     <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
             </div>
         </li>
         <li>
             <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-2.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg"  alt="某天 也许会相遇 相遇在这个好地方"/>
-                    <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
             </div>
         </li>
         <li>
             <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-3.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"  alt="不要太担心 只因为我相信"/>
-                    <h3 class="am-gallery-title">不要太担心 只因为我相信</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
+                <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
+                    </div>
+            </div>
+        </li><li>
+            <div class="am-gallery-item">
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
+                    </div>
             </div>
         </li>
         <li>
             <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-4.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"  alt="终会走过这条遥远的道路"/>
-                    <h3 class="am-gallery-title">终会走过这条遥远的道路</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
+                <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
                 </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-3.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"  alt="不要太担心 只因为我相信"/>
-                    <h3 class="am-gallery-title">不要太担心 只因为我相信</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-4.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"  alt="终会走过这条遥远的道路"/>
-                    <h3 class="am-gallery-title">终会走过这条遥远的道路</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-3.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"  alt="不要太担心 只因为我相信"/>
-                    <h3 class="am-gallery-title">不要太担心 只因为我相信</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="am-gallery-item">
-                <a href="http://s.amazeui.org/media/i/demos/bing-4.jpg" class="">
-                    <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"  alt="终会走过这条遥远的道路"/>
-                    <h3 class="am-gallery-title">终会走过这条遥远的道路</h3>
-                    <div class="am-gallery-desc">2375-09-26</div>
-                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
+                    </div>
             </div>
         </li>
     </ul>
-
+    <div class="am-fr"></div>
+    <button type="button" class="am-btn am-btn-default am-btn-block" style="margin: 20px 0">更多活动</button>
 </div>
-
+    
+       <div class="star am-container mcenter" id="num3"><span>无氧健身</span></div>
+<div class="am-container">
+    <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2 am-avg-md-3 am-avg-lg-3 am-gallery-default" data-am-gallery="{ pureview: true }" >
+        <li>
+            <div class="am-gallery-item">
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
+            </div>
+        </li>
+        <li>
+            <div class="am-gallery-item">
+                <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
+            </div>
+        </li>
+        <li>
+            <div class="am-gallery-item">
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-primary" onclick="window.open('detailspage.html')">即将开始</button>
+                    </div>
+            </div>
+        </li>
+        <li>
+            <div class="am-gallery-item">
+                <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
+                    </div>
+            </div>
+        </li><li>
+            <div class="am-gallery-item">
+             <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
+                    </div>
+            </div>
+        </li>
+        <li>
+            <div class="am-gallery-item">
+                <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                    <div class="am-gallery-desc">活动时间：2375-09-26</div>
+                </a>
+                    <div class="events-btn">
+                        <button type="button" class="am-btn am-btn-default" onclick="window.open('detailspage.html')">已经结束</button>
+                    </div>
+            </div>
+        </li>
+    </ul>
+    <div class="am-fr"></div>
+    <button type="button" class="am-btn am-btn-default am-btn-block" style="margin: 20px 0">更多活动</button>
+</div>
 
 <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
     <a href="#top" title="回到顶部">
