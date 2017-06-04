@@ -23,7 +23,7 @@
     <meta name="msapplication-TileImage" content="<?php echo base_url("images/i/app.png"); ?>">
     <meta name="msapplication-TileColor" content="#e1652f">
 
-    <link rel="icon" type="image/png" href="../images/i/favicon.png">
+    <link rel="icon" type="image/png" href="<?php echo base_url("images/i/favicon.png"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/amazeui.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("css/public.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/details.css"); ?>">
@@ -31,7 +31,7 @@
     <script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
     <!--<![endif]-->
     <!--[if lte IE 8 ]>
-    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js">></script>
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
     <script src="<?php echo base_url("assets/js/amazeui.ie8polyfill.min.js"); ?>"></script>
     <![endif]-->
@@ -54,7 +54,7 @@
 
         <div class="am-collapse am-topbar-collapse" id="collapse-head">
             <ul class="am-nav am-nav-pills am-topbar-nav">
-                <li class="am-active"><a href="#">首页</a></li>
+                <li class="am-active"><a href="<?php echo site_url("home"); ?>">首页</a></li>
                 <li><a href="<?php echo site_url("search_activity/index"); ?>">查找活动</a></li>
                 <li><a href="<?php echo site_url("create_activity/index"); ?>">创建活动</a></li>
                 <li class="am-dropdown" data-am-dropdown>
@@ -62,13 +62,8 @@
                         地区 <span class="am-icon-caret-down"></span>
                     </a>
                     <ul class="am-dropdown-content">
-                        <!--<li class="am-dropdown-header">案例</li>
-                        <li><a href="<?php echo site_url("cases.html"); ?>">4. 全部案例</a></li>
-                        <li><a href="#">1. 游戏案例</a></li>
-                        <li><a href="#">2. 营销案例</a></li>-->
                         <li><a href="#">上海</a></li>
                         <li><a href="#">其他</a></li>
-
                     </ul>
                 </li>
             </ul>

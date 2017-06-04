@@ -37,7 +37,7 @@
 
         <div class="am-collapse am-topbar-collapse" id="collapse-head">
             <ul class="am-nav am-nav-pills am-topbar-nav">
-                <li class="am-active"><a href="#">首页</a></li>
+                <li class="am-active"><a href="<?php echo site_url("home"); ?>">首页</a></li>
                 <li><a href="<?php echo site_url("search_activity/index"); ?>">查找活动</a></li>
                 <li><a href="<?php echo site_url("create_activity/index"); ?>">创建活动</a></li>
                 <li class="am-dropdown" data-am-dropdown>
@@ -45,13 +45,8 @@
                         地区 <span class="am-icon-caret-down"></span>
                     </a>
                     <ul class="am-dropdown-content">
-                        <!--<li class="am-dropdown-header">案例</li>
-                        <li><a href="<?php echo site_url("cases.html"); ?>">4. 全部案例</a></li>
-                        <li><a href="#">1. 游戏案例</a></li>
-                        <li><a href="#">2. 营销案例</a></li>-->
                         <li><a href="#">上海</a></li>
                         <li><a href="#">其他</a></li>
-
                     </ul>
                 </li>
             </ul>

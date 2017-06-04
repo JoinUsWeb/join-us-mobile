@@ -10,42 +10,31 @@ class Search_activity_model extends CI_Model
 {
     public function __construct()
     {
-        $this->load->model('Activity_model');
+        $this->load->model(array('Activity_model','Second_label_model','Second_label_model'));
     }
 
-    public function search_activity($second_label_id, $city, $time, $order)
+    public function search_activity($first_label = -1, $second_label = -1)
     {
-        $order_name = array("","activity_start","");
-        $query = array();
-        $earlier_than = null;
-        $activity = null;
-        if ($second_label_id != 0)
-            $query['first_label_id'] = $second_label_id;
-        if ($city != 0)
-            $query['city'] = $city;
-        if ($time != 0) {
-            if ($time == 1)
-                $earlier_than = date('Y-m-d H:i:s', strtotime('+1 month'));
-            else if ($time == 2)
-                $earlier_than = date('Y-m-d H:i:s', strtotime('+2 month'));
-            else if ($time == 3)
-                $earlier_than = date('Y-m-d H:i:s', strtotime('+3 month'));
-            $query['activity_start < '] = $earlier_than;
+        $data = null;
+        if ($second_label == -1 && $first_label == -1) {
+            // 查询所有一级标签的活动的数量 search.html
+            $data = $this->db->select("first_label.id,first_label.name,COUNT(*) AS num")
+                ->from('activity')
+                ->join('first_label','first_label.id = activity.first_label_id')
+                ->group_by('first_label_id')
+                ->get()
+                ->result_array();
+        } else {
+            // 给定一级标签，查询每个二级标签下活动 search_deep.htm
+            $data['first_label_name'] = $this->First_label_model->get_first_label_by_id($first_label)['name'];
+            $all_second_label = $this->Second_label_model->get_second_label_by_first_label_id($first_label);
+            foreach ($all_second_label as $second_label_info){
+                $data['activity_in_second_label'][$second_label_info['id']]['name'] =
+                    $this->Second_label_model->get_second_label_by_id($second_label_info['id'])['name'];
+                $data['activity_in_second_label'][$second_label_info['id']]['activity'] =
+                    $this->Activity_model->get_activity_by_second_label_id($second_label_info['id']);
+            }
         }
-        if (empty($query) && $order == 0)
-            $activity = $this->Activity_model->get_activity();
-        else {
-            $query['isVerified'] = 1;
-            if ($order != 0)
-                $activity = $this->db
-                    ->where($query)
-                    ->order_by($order_name[$order - 1],"DESC")
-                    ->get('activity')
-                    ->result_array();
-            else
-                $activity = $this->Activity_model->get_activity_by_where_string($query);
-        }
-
-        return $activity;
+        return $data;
     }
 }

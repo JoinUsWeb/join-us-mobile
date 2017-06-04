@@ -1,322 +1,669 @@
-<script type="text/javascript">
-    var w, h, className;
-    function getSrceenWH() {
-        w = $(window).width();
-        h = $(window).height();
-        $('#dialogBg').width(w).height(h);
-    }
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
 
-    window.onresize = function () {
-        getSrceenWH();
-    };
-    $(window).resize();
+    <!--360 browser -->
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="wos">
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="<?php echo base_url("images/i/app.png"); ?>">
+    <!--Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url("images/i/app.png"); ?>">
+    <!--Win8 or 10 -->
+    <meta name="msapplication-TileImage" content="<?php echo base_url("images/i/app.png"); ?>">
+    <meta name="msapplication-TileColor" content="#e1652f">
 
-    $(function () {
-        getSrceenWH();
+    <link rel="icon" type="image/png" href="<?php echo base_url("images/i/favicon.png"); ?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/amazeui.css"); ?>">
+    <link rel="stylesheet" href="<?php echo base_url("css/public.css"); ?>">
 
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
+    <!--<![endif]-->
+    <!--[if lte IE 8 ]>
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="<?php echo base_url(" assets/js/amazeui.ie8polyfill.min.js"); ?>"></script>
+    <![endif]-->
+    <script src="<?php echo base_url("assets/js/amazeui.min.js"); ?>"></script>
+    <script src="<?php echo base_url("js/public.js"); ?>"></script>
+</head>
+<body>
 
-        $('.box a').click(function () {
-            className = $(this).attr('class');
-            $('#dialogBg').fadeIn(300);
-            $('#dialog').removeAttr('class').addClass('animated ' + className + '').fadeIn();
-        });
+<header class="am-topbar am-topbar-fixed-top wos-header">
+    <div class="am-container">
+        <h1 class="am-topbar-brand">
+            <a href="<?php echo site_url("home"); ?>"><img src="<?php echo base_url("images/logo2.png"); ?>" alt=""></a>
+        </h1>
 
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-warning am-show-sm-only"
+                data-am-collapse="{target: '#collapse-head'}">
+            <span class="am-sr-only">导航切换</span>
+            <span class="am-icon-bars"></span>
+        </button>
 
-        $('.claseDialogBtn').click(function () {
-            $('#dialogBg').fadeOut(300, function () {
-                $('#dialog').addClass('bounceOutUp').fadeOut();
-            });
-        });
-    });
-</script>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-xs">
-            <div id="carousel-299058" class="carousel slide">
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-299058" data-slide-to="0" class=""></li>
-                    <li data-target="#carousel-299058" data-slide-to="1" class="active"></li>
-                    <li data-target="#carousel-299058" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner">
+        <div class="am-collapse am-topbar-collapse" id="collapse-head">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li class="am-active"><a href="<?php echo site_url("home"); ?>">首页</a></li>
+                <li><a href="<?php echo site_url("search_activity/index"); ?>">查找活动</a></li>
+                <li><a href="<?php echo site_url("create_activity/index"); ?>">创建活动</a></li>
+                <li class="am-dropdown" data-am-dropdown>
+                    <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+                        地区 <span class="am-icon-caret-down"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li><a href="#">上海</a></li>
+                        <li><a href="#">其他</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="am-topbar-right">
+                <a href="<?php echo site_url("register/index"); ?>">
+                    <button class="am-btn am-btn-default am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>注册
+                    </button>
+                </a>
+            </div>
+
+            <div class="am-topbar-right">
+                <a href="<?php echo site_url("login/index"); ?>">
+                    <button class="am-btn am-btn-danger am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登录
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<!--banner-->
+<div class="banner">
+    <div class="am-g am-container">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-8">
+            <div data-am-widget="slider" class="am-slider am-slider-c1" data-am-slider='{"directionNav":false}'>
+                <ul class="am-slides">
                     <?php $num = count($hot_activity);
                     for ($count = 0; $count < $num; $count++) : ?>
-                        <div class="<?php echo $count == 1 ? "item active" : "item"; ?>">
+                        <li>
                             <a href="<?php echo site_url("activity_detail/index/" . $hot_activity[$count]["id"]); ?>">
-                                <img class="img-responsive"
-                                     src="<?php echo base_url($hot_activity[$count]['poster']); ?>"
-                                     alt="thumb">
-                                <div class="carousel-caption"><?php echo $hot_activity[$count]['name']; ?></div>
+                                <img src="<?php echo base_url($hot_activity[$count]['poster']); ?>">
+                                <div class="am-slider-desc"><?php echo $hot_activity[$count]['name']; ?></div>
+                            </a>
+
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--news-->
+<div class="am-g am-container newatype">
+    <div class="am-u-sm-12 am-u-md-12 am-u-lg-8 oh">
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default"
+             style="border-bottom: 0px; margin-bottom: -10px">
+            <h2 class="am-titlebar-title ">
+                热门活动
+            </h2>
+            <nav class="am-titlebar-nav">
+                <a href="#more">more &raquo;</a>
+            </nav>
+        </div>
+
+        <div data-am-widget="list_news" class="am-list-news am-list-news-default news">
+            <div class="am-list-news-bd">
+                <ul class="am-list">
+                    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left"
+                        data-am-scrollspy="{animation:'fade'}">
+                        <div class="am-u-sm-5 am-list-thumb">
+                            <a href="http://www.douban.com/online/11624755/">
+                                <img src="../Temp-images/b2.jpg" alt="我最喜欢的一张画"/>
+                            </a>
+
+                        </div>
+
+                        <div class=" am-u-sm-7 am-list-main">
+                            <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">我最喜欢的一张画</a>
+                            </h3>
+                            <div class="am-list-item-text">
+                                你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，
+                            </div>
+                        </div>
+
+                    </li>
+                    <div class="newsico am-fr">
+                        <i class="am-icon-clock-o">2016/11/11</i>
+                        <i class="am-icon-hand-pointer-o">12322</i>
+                    </div>
+
+
+                    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left"
+                        data-am-scrollspy="{animation:'fade'}">
+                        <div class="am-u-sm-5 am-list-thumb">
+                            <a href="http://www.douban.com/online/11624755/">
+                                <img src="../Temp-images/b2.jpg" alt="我最喜欢的一张画"/>
                             </a>
                         </div>
-                    <?php endfor; ?>
-                </div>
-                <a class="left carousel-control" href="#carousel-299058" data-slide="prev"><span
-                            class="icon-prev"></span></a> <a class="right carousel-control" href="#carousel-299058"
-                                                             data-slide="next"><span class="icon-next"></span></a></div>
-        </div>
-    </div>
-    <hr>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-9 col-md-12">
-            <div>
-                <div class="box home_block">
-                    <div class="demo">
-                        <h3 style="float: left;">推荐活动</h3>
-                        <?php if ($need_first_label) : ?>
-                        <a class="bounceIn" href="javascript:;">请选择兴趣爱好</a>
-                    </div>
-                    <div id="dialogBg"></div>
-                    <div id="dialog" class="animated">
-                        <img class="dialogIco" width="50" height="50" src="<?php echo base_url('img/ico.png'); ?>"
-                             alt=""/>
-                        <div class="dialogTop">
-                            <a href="javascript:;" class="claseDialogBtn" style=" text-decoration: none;color: black;">关闭</a>
-                        </div>
-                        <p class="editInfos">
-                            <?php foreach ($all_first_label as $single_label) : ?>
-                                <label for="<?php echo $single_label['id'] ?>">
-                                    <?php echo $single_label['name'] ?>
-                                </label>
-                                <input type="checkbox" name="first_label[]"
-                                       value="<?php echo $single_label['id'] ?>"
-                                       id="<?php echo $single_label['id'] ?>">
-                            <?php endforeach; ?>
-                        </p>
-                        <p class="button_choose">
-                            <button id="select_label" class="submitBtn">确定</button>
-                        </p>
-                    </div>
-                    <?php else : ?>
-                </div>
-                <?php endif; ?>
-            </div>
+                        <div class=" am-u-sm-7 am-list-main">
+                            <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">我最喜欢的一张画</a>
+                            </h3>
 
-            <br>
-
-            <!-- 推荐的活动 -->
-            <div class="content">
-                <div class="wrap">
-                    <div id="main" role="main">
-                        <ul id="tiles">
-                            <!-- <img src="img/400X200.gif" alt="Thumbnail Image 1" class="img-responsive">These are our grid blocks -->
-                            <?php foreach ($recommended_activity as $single_activity) : ?>
-                                <li>
-                                    <a href="<?php echo site_url("activity_detail/index/" . $single_activity["id"]); ?>">
-                                        <img src="<?php echo base_url($single_activity['poster']); ?>" width="200"
-                                             height="200"></a>
-                                    <div class="caption">
-                                        <a class="hd_title_block"
-                                           href="<?php echo site_url("activity_detail/index/" . $single_activity["id"]); ?>">
-                                            <h3 class="hd_title"><?php echo $single_activity["name"]; ?></h3>
-                                        </a>
-                                        <hr>
-                                        <p>
-                                            <i class="icon-time icon-large"></i><?php echo $single_activity["apply_expire"]; ?>
-                                        </p>
-                                        <p>
-                                            <i class="icon-map-marker icon-large"></i><?php echo $single_activity["place"]; ?>
-                                        </p>
-
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- 推荐的活动 -->
-
-            <!--
-            <?php if (!$need_first_label) : ?>
-                <div id="page-navigation" class="hide clear">
-                    <span class="disabled page-navigation-prev" title="上一页">«上一页</span>
-                    <a href="?&p=1" data-target="page" data-page="1" class="cur">1</a>
-                    <a href="?&p=2" data-target="page" data-page="2">2</a>
-                    <a href="?&p=3" data-target="page" data-page="3">3</a>
-                    <a href="?&p=4" data-target="page" data-page="4">4</a>
-                    <a href="?&p=5" data-target="page" data-page="5">5</a>
-                    <a href="?&p=6" data-target="page" data-page="6">6</a>
-                    <a href="?&p=7" data-target="page" data-page="7">7</a>
-                    <a href="?&p=8" data-target="page" data-page="8">8</a>
-                    <a href="?&p=9" data-target="page" data-page="9">9</a>
-                    <a href="?&p=10" data-target="page" data-page="10">10</a>
-                    <a href="?&p=2" class="page-navigation-next" data-page="2" title="下一页">下一页»</a>
-                </div>
-            <?php endif; ?> -->
-
-        </div>
-
-
-    </div>
-
-    <div class="col-lg-3 col-md-6 col-md-offset-3 col-lg-offset-0">
-        <div class="messagebox">
-            <div class="my_message">
-                <p>我的消息</p>
-            </div>
-            <a href="<?php echo site_url("message/personal_mymessages"); ?>">
-                <div class="my_message_hd">
-
-                    <p><i class="icon-calendar"></i>活动提醒<!--2016-11-23创新创业大赛--></p>
-                </div>
-                <div class="my_message_pl">
-                    <p><i class="icon-comments"></i>小组动态</p>
-                </div>
-                <div class="my_message_yq">
-                    <p><i class="icon-user"></i>我的邀请</p>
-                </div>
-                <div class="my_message_sh">
-                    <p><i class="icon-ok-sign"></i>审核通过</p>
-                </div>
-            </a>
-
-        </div>
-        <br>
-        <div class="sidebar_hot">
-            <div class="well">
-                <div class="hot_hd">
-                    <p>热门活动</p>
-                </div>
-                <div class="hot_hd_content">
-                    <?php
-                    if (!empty($hot_activity))
-                        foreach ($hot_activity as $hot_activity_item) {
-                            ?>
-                            <div class="content_li">
-                                <div class="li_left">
-                                    <a href="<?php echo site_url("activity_detail/index/" . $hot_activity_item["id"]) ?>">
-                                        <img src="<?php echo base_url($hot_activity_item['poster']) ?>" alt=""
-                                             width="60px" height="60px"></a>
-                                </div>
-                                <div class="li_right">
-                                    <a class="li_right_title"
-                                       href="<?php echo site_url("activity_detail/index/" . $hot_activity_item["id"]) ?>">
-                                        <h5>
-                                            <?php
-                                            echo $hot_activity_item['name'];
-                                            ?>
-                                        </h5></a>
-                                    <p><?php
-                                        echo $hot_activity_item['activity_start'];
-                                        ?></p>
-                                </div>
+                            <div class="am-list-item-text">
+                                你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，
                             </div>
-                        <?php } ?>
+
+                        </div>
+                    </li>
+
+                    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left"
+                        data-am-scrollspy="{animation:'fade'}">
+                        <div class="am-u-sm-5 am-list-thumb">
+                            <a href="http://www.douban.com/online/11624755/">
+                                <img src="../Temp-images/b2.jpg" alt="我最喜欢的一张画"/>
+                            </a>
+                        </div>
+
+                        <div class=" am-u-sm-7 am-list-main">
+                            <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">我最喜欢的一张画</a>
+                            </h3>
+
+                            <div class="am-list-item-text">
+                                你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，
+                            </div>
+
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+            <a href="#"><img src="../Temp-images/ad2.png" class="am-img-responsive" width="100%"/></a>
+
+            <div class="am-hide-sm">
+                <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+                    <h2 class="am-titlebar-title ">
+                        热门资讯
+                    </h2>
+                    <nav class="am-titlebar-nav">
+                        <a href="#more" onClick="$('.case').hide();$('#youxi').show();">游戏案例</a>
+                        <a href="#more" onClick="$('.case').hide();$('#yingxiao').show();">营销案例</a>
+                        <a href="#more" onClick="$('.case').hide();$('#gongju').show();">工具案例</a>
+                    </nav>
+                </div>
+
+
+                <div id="youxi" class="case am-animation-slide-left">
+                    <ul class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-overlay"
+                        data-am-gallery="{ pureview: true }">
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="yingxiao" class="case am-animation-slide-right dn">
+                    <ul class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-overlay"
+                        data-am-gallery="{ pureview: true }">
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="../Temp-images/dd.jpg">
+                                    <img src="../Temp-images/cc.jpg" data-replace-img="../Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div id="gongju" class="dn case am-animation-slide-right">
+                    <ul class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-overlay"
+                        data-am-gallery="{ pureview: true }">
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="Temp-images/dd.jpg">
+                                    <img src="Temp-images/cc.jpg" data-replace-img="Temp-images/dd.jpg"
+                                         alt="远方 有一个地方 那里种有我们的梦想"/>
+                                    <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                                    <div class="am-gallery-desc">2375-09-26</div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+    <div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+            <h2 class="am-titlebar-title ">
+                个人专栏
+            </h2>
+            <nav class="am-titlebar-nav">
+                <a href="#more">more &raquo;</a>
+            </nav>
+        </div>
+        <div data-am-widget="list_news" class="am-list-news am-list-news-default right-bg"
+             data-am-scrollspy="{animation:'fade'}">
+            <ul class="am-list">
+                <?php foreach ($recommended_activity as $single_activity) : ?>
+                    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                        <div class="am-u-sm-4 am-list-thumb">
+                            <a href="<?php echo site_url("activity_detail/index/" . $single_activity["id"]); ?>">
+                                <img src="<?php echo base_url($single_activity['poster']); ?>" class="face"</a>
+                        </div>
+                        <div class=" am-u-sm-8 am-list-main">
+                            <h3 class="am-list-item-hd"><a
+                                        href="<?php echo site_url("activity_detail/index/" . $single_activity["id"]); ?>"><?php echo $single_activity["name"]; ?></a>
+                            </h3>
+
+                            <div class="am-list-item-text"><?php echo $single_activity["brief"]; ?></div>
+                        </div>
+                    </li>
+                    <hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+            <h2 class="am-titlebar-title ">
+                合作专栏
+            </h2>
+            <nav class="am-titlebar-nav">
+                <a href="#more">more &raquo;</a>
+            </nav>
+        </div>
+
+        <div data-am-widget="list_news" class="am-list-news am-list-news-default right-bg"
+             data-am-scrollspy="{animation:'fade'}">
+            <ul class="am-list">
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                    <div class="am-u-sm-4 am-list-thumb">
+                        <a href="http://www.douban.com/online/11624755/">
+                            <img src="Temp-images/face.jpg" class="face"/>
+                        </a>
+                    </div>
+
+                    <div class=" am-u-sm-8 am-list-main">
+                        <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">勾三古寺</a></h3>
+
+                        <div class="am-list-item-text">代码压缩和最小化。在这里，我们为你收集了9个最好的JavaScript压缩工具将帮</div>
+                    </div>
+                </li>
+                <hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                    <div class="am-u-sm-4 am-list-thumb">
+                        <a href="http://www.douban.com/online/11624755/">
+                            <img src="Temp-images/face.jpg" class="face"/>
+                        </a>
+                    </div>
+
+                    <div class=" am-u-sm-8 am-list-main">
+                        <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">勾三古寺</a></h3>
+
+                        <div class="am-list-item-text">代码压缩和最小化。在这里，我们为你收集了9个最好的JavaScript压缩工具将帮</div>
+
+                    </div>
+                </li>
+                <hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                    <div class="am-u-sm-4 am-list-thumb">
+                        <a href="http://www.douban.com/online/11624755/">
+                            <img src="Temp-images/face.jpg" class="face"/>
+                        </a>
+                    </div>
+
+                    <div class=" am-u-sm-8 am-list-main">
+                        <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">勾三古寺</a></h3>
+
+                        <div class="am-list-item-text">代码压缩和最小化。在这里，我们为你收集了9个最好的JavaScript压缩工具将帮</div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+            <h2 class="am-titlebar-title ">
+                评测
+            </h2>
+            <nav class="am-titlebar-nav">
+                <a href="#more">more &raquo;</a>
+            </nav>
+        </div>
+
+        <div data-am-widget="list_news" class="am-list-news am-list-news-default right-bg"
+             data-am-scrollspy="{animation:'fade'}">
+            <ul class="am-list">
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                    <div class="am-u-sm-4 am-list-thumb">
+                        <a href="http://www.douban.com/online/11624755/">
+                            <img src="Temp-images/face.jpg"/>
+                        </a>
+                    </div>
+
+                    <div class=" am-u-sm-8 am-list-main">
+                        <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">勾三古寺</a></h3>
+
+                        <div class="am-list-item-text">代码压缩和最小化。在这里，我们为你收集了9个最好的JavaScript压缩工具将帮</div>
+                    </div>
+                </li>
+                <hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                    <div class="am-u-sm-4 am-list-thumb">
+                        <a href="http://www.douban.com/online/11624755/">
+                            <img src="Temp-images/face.jpg"/>
+                        </a>
+                    </div>
+
+                    <div class=" am-u-sm-8 am-list-main">
+                        <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">勾三古寺</a></h3>
+
+                        <div class="am-list-item-text">代码压缩和最小化。在这里，我们为你收集了9个最好的JavaScript压缩工具将帮</div>
+
+                    </div>
+                </li>
+                <hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                    <div class="am-u-sm-4 am-list-thumb">
+                        <a href="http://www.douban.com/online/11624755/">
+                            <img src="Temp-images/face.jpg"/>
+                        </a>
+                    </div>
+
+                    <div class=" am-u-sm-8 am-list-main">
+                        <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/">勾三古寺</a></h3>
+
+                        <div class="am-list-item-text">代码压缩和最小化。在这里，我们为你收集了9个最好的JavaScript压缩工具将帮</div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="am-gallery am-avg-sm-1
+  am-avg-md-1 am-avg-lg-1 am-gallery-default" data-am-gallery="{ pureview: true }">
+            <li>
+                <div class="am-gallery-item">
+                    <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg" class="">
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt="远方 有一个地方 那里种有我们的梦想"/>
+                        <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                        <div class="am-gallery-desc">
+                            <div class="am-fr">北京</div>
+                            <div class="am-fl">2016/11/11</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="am-gallery-item">
+                    <a href="http://s.amazeui.org/media/i/demos/bing-2.jpg" class="">
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方"/>
+                        <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
+                        <div class="am-gallery-desc">
+                            <div class="am-fr">北京</div>
+                            <div class="am-fl">2016/11/11</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="am-gallery-item">
+                    <a href="http://s.amazeui.org/media/i/demos/bing-2.jpg" class="">
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方"/>
+                        <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
+                        <div class="am-gallery-desc">
+                            <div class="am-fr">北京</div>
+                            <div class="am-fl">2016/11/11</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
 </div>
 
-<script src="<?php echo base_url("js/jquery.imagesloaded.js") ?>"></script>
-<script src="<?php echo base_url("js/jquery.wookmark.js") ?>"></script>
-<script type="text/javascript">
-    var count = 1;
-    (function ($) {
-        var $tiles = $('#tiles'),
-            $handler = $('li', $tiles),
-            $main = $('#main'),
-            $window = $(window),
-            $document = $(document),
-            options = {
-                autoResize: true, // This will auto-update the layout when the browser window is resized.
-                container: $main, // Optional, used for some extra CSS styling
-                offset: 20, // Optional, the distance between grid items
-                itemWidth: 269 // Optional, the width of a grid item
-            };
-
-        /**
-         * Reinitializes the wookmark handler after all images have loaded
-         */
-        function applyLayout() {
-            $tiles.imagesLoaded(function () {
-                // Destroy the old handler
-                if ($handler.wookmarkInstance) {
-                    $handler.wookmarkInstance.clear();
-                }
-
-                // Create a new layout handler.
-                $handler = $('li', $tiles);
-                $handler.wookmark(options);
-            });
-        }
-
-        /**
-         * When scrolled all the way to the bottom, add more tiles
-         */
-        /*   function($loading, isBeyondMaxPage) {
-         if ( !isBeyondMaxPage ) {
-         $loading.fadeOut();
-         } else {
-         $loading.hide();
-         $('#page-navigation').show();
-         }
-         }
-         */
-
-        function onScroll() {
-
-            // Check if we're within 100 pixels of the bottom edge of the broser window.
-            var winHeight = window.innerHeight ? window.innerHeight : $window.height(), // iphone fix
-                closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
-
-            if (closeToBottom) {
-                // Get the first then items from the grid, clone them, and add them to the bottom of the grid
-                count++;
-                if (count > 1) {
-                    return;
-                }
-                var $items = $('li', $tiles),
-                    $firstTen = $items.slice(0, 10);
-                $tiles.append($firstTen.clone());
-
-                applyLayout();
-
-            }
-
-        }
-
-        // Call the layout function for the first time
-        applyLayout();
-
-        // Capture scroll event.
-        $window.bind('scroll.wookmark', onScroll);
-    })(jQuery);
-</script>
-<script src="<?php echo base_url("js/stickUp.min.js") ?>"></script>
-<script type="text/javascript">
-    //initiating jQuery
-    jQuery(function ($) {
-        $(document).ready(function () {
-            //enabling stickUp on the '.navbar-wrapper' class
-            $('.sidebar_hot').stickUp({
-                topMargin: '70px'
-            });
-        });
-    });
-
-    $("#select_label").click(function () {
-        var first_labels = new Array();
-        $("input:checkbox").each(function () {
-            if (this.checked == true)
-                first_labels.push(this.value);
-        });
-        var user_id = '<?php echo $_SESSION['user_id']; ?>';
-        $.ajax({
-            type: 'POST',
-            url: '<?php echo site_url('separated_info/select_first_label/'); ?>',
-            data: {'first_label[]': first_labels, 'user_id': user_id},
-            success: function () {
-                location.reload(true);
-            }
-        });
-        $('#dialogBg').fadeOut(300, function () {
-            $('#dialog').addClass('bounceOutUp').fadeOut();
-        });
-    })
-
-</script>
+<div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
+    <a href="#top" title="回到顶部">
+        <span class="am-gotop-title">回到顶部</span>
+        <i class="am-gotop-icon am-icon-chevron-up"></i>
+    </a>
+</div>
+<footer>
+    <div style="text-align: center">
+        <p>Copyright © JoinUs Web. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
