@@ -11513,7 +11513,7 @@ tbody.am-collapse.am-in {
 .am-gallery-default .am-gallery-title {
   margin-top: 10px;
   font-weight: normal;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   display: block;
   word-wrap: normal;
   /* for IE */
@@ -11524,7 +11524,7 @@ tbody.am-collapse.am-in {
 }
 .am-gallery-default .am-gallery-desc {
   color: #999999;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 /**
   * Gallery Theme: overlay
