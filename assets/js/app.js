@@ -30,56 +30,73 @@
 
         if (page_name.includes("login") || page_name.includes("register")) {
             $("#form_register").validator({
+                onValid: function (validity) {
+                    $(validity.field).popover("destroy");
+
+                },
+                onInValid: function (validity) {
+                    var $field = $(validity.field);
+                    var msg = $field.data("validationMessage") || this.getValidationMessage(validity);
+                    $field.popover({
+                        content: msg,
+                        trigger: 'focus'
+                    });
+                },
+
                 validate: function (validity) {
                     var $field = $(validity.field);
-                    // Check E-mail is unique
-                    if ($field.is("#r-email") && !validity.valueMissing && !validity.typeMismatch) {
-                        return $.ajax({
-                            url: root + "/separated_info/register_info_check/email",
-                            type: 'POST',
-                            async: false,
-                            data: {
-                                '_email': $field.val()
-                            }
-                        }).then(function (info) {
-                            if (info === "true") {
-                                validity.email_unique = true;
-                                validity.valid = true;
-                                console.log("Email: " + info);
-                            }
-                            else {
-                                validity.email_unique = false;
+                    // Remove message
+                    $field.removeAttr("data-validation-message");
+
+                    if ($field.is("#r-email")) {
+                        // Check E-mail is unique
+                        if (validity.patternMismatch === true) {
+                            $field.attr("data-validation-message", "邮箱格式错误！");
+                        } else if (!validity.valueMissing) {
+                            return $.ajax({
+                                url: root + "/separated_info/register_info_check/email",
+                                type: 'POST',
+                                data: {
+                                    '_email': $field.val()
+                                }
+                            }).then(function (info) {
+                                if (info === "true") {
+                                    validity.valid = true;
+                                    console.log("Email: " + info);
+                                }
+                                else {
+                                    validity.valid = false;
+                                    // 显示错误提示
+                                    $field.attr("data-validation-message", "该邮箱已经注册，请登录或者更换其他邮箱");
+                                    console.log("Email: " + info);
+                                }
+                                return validity;
+                            }, function () {
                                 validity.valid = false;
-                                // 显示错误提示
-                                console.log("Email: " + info);
-                            }
-                            return validity;
-                        }, function () {
-                            validity.valid = false;
-                            return validity;
-                        });
+                                return validity;
+                            });
+                        }
                     } else if ($field.is("#r-nickname") && !validity.valueMissing) {
                         // Check nick-name is not all blank
-                        validity.valid = ($field.val().trim().length !== 0);
-                        if (validity.valid === true) {
+                        if ($field.val().trim().length === 0) {
+                            $field.attr("data-validation-message", "昵称不可全为空格！");
+                        } else {
                             // Check nickname is unique
                             return $.ajax({
                                 url: root + "/separated_info/register_info_check/nickname",
                                 type: 'POST',
-                                async: false,
                                 data: {
                                     '_nickName': $field.val()
                                 }
                             }).then(function (info) {
                                 if (info === "true") {
-                                    validity.nickname_unique = true;
                                     validity.valid = true;
                                     console.log("NickN: " + info);
                                 }
                                 else {
-                                    validity.nickname_unique = true;
                                     validity.valid = false;
                                     // 显示错误提示
+                                    $field.attr("data-validation-message", "昵称已被使用！");
                                     console.log("NickN: " + info);
                                 }
                                 return validity;
@@ -88,22 +105,40 @@
                                 return validity;
                             });
                         }
-                        return validity;
+                    }else if ($field.is("#r-password_to_confirm") && !validity.valueMissing){
+                        if (validity.patternMismatch)
+                            $field.attr("data-validation-message", "两次密码不相同！");
                     }
+                    return validity;
                 },
                 submit: function () {
+                    var good = 0;
                     var formValidity = this.isFormValid();
+                    if (typeof formValidity === 'boolean') return formValidity;
                     $.when(formValidity).then(function () {
                         $("#r-password").val(CryptoJS.MD5($("#r-password").val()));
                         console.log("Submit: true");
-                        return true;
+                        good = 1;
                     }, function () {
                         console.log("Submit: false");
-                        return false;
+                        good = 2;
                     });
+                    return good === 1;
                 }
             });
             $("#form_login").validator({
+                onValid: function (validity) {
+                    $(validity.field).popover("destroy");
+
+                },
+                onInValid: function (validity) {
+                    var $field = $(validity.field);
+                    var msg = $field.data("validationMessage") || this.getValidationMessage(validity);
+                    $field.popover({
+                        content: msg,
+                        trigger: 'focus'
+                    });
+                },
                 submit: function () {
                     if (this.isFormValid() === true) {
                         $("#password").val(CryptoJS.MD5($("#password").val()));

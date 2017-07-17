@@ -46,13 +46,6 @@ class Register extends CI_Controller
                 'required' => 'Please provide your password!'
             ));
 
-        $this->form_validation->set_rules('_password2', "Password",
-            'trim|htmlspecialchars|required|matches[_password]',
-            array(
-                'required' => 'Please type your password again!',
-                'matches' => "Fail to match!"
-            ));
-
         $this->form_validation->set_rules('_phoneNumber', 'Phone number',
             'trim|htmlspecialchars|required|is_natural|min_length[11]|max_length[11]',
             array(

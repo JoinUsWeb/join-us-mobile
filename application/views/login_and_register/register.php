@@ -69,7 +69,7 @@
                         <fieldset>
                             <div class="am-form-group">
                         <label for="r-email">E-mail</label>
-                        <input type="text" name="_email" id="r-email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
+                        <input type="email" name="_email" id="r-email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
                         <label for="r-nickname">Nick Name</label>
@@ -77,11 +77,11 @@
                             </div>
                             <div class="am-form-group">
                         <label for="r-password">Password</label>
-                        <input type="password" name="_password" id="r-password" minlength="3" placeholder="User Password" class="l-r-input" required/>
+                        <input type="password" name="_password" id="r-password" minlength="6" placeholder="User Password" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
                         <label for="r-password_to_confirm">Confirm Password</label>
-                        <input type="password" name="_password2" id="r-password_to_confirm" minlength="3" data-equal-to="#r-password" placeholder="Confirm Password" class="l-r-input" required/>
+                        <input type="password" name="_password2" id="r-password_to_confirm" data-equal-to="#r-password" placeholder="Confirm Password" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
                         <label for="r-telephone">Telephone</label>
@@ -101,7 +101,7 @@
                             </div>
                             <div class="am-form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="_password" id="password" minlength="3" placeholder="User Password" class="l-r-input" required/>
+                        <input type="password" name="_password" id="password" minlength="6" placeholder="User Password" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" name="_agree" required="">已同意使用条约 </label></div>
                             <button class="myapp-login-button am-btn am-btn-secondary" id="l-submit" type="submit">LOGIN IN</button>
@@ -130,7 +130,7 @@
 <!--<![endif]-->
 <script src='https://cdn.bootcss.com/crypto-js/3.1.2/components/core-min.js' type='text/javascript'></script>
 <script src='https://cdn.bootcss.com/crypto-js/3.1.2/components/md5-min.js' type='text/javascript'></script>
-<script src="<?php echo base_url("assets/js/amazeui.min.js"); ?>"></script>
+<script src="<?php echo base_url("assets/js/amazeui.js"); ?>"></script>
 <script src="<?php echo base_url("assets/js/app.js"); ?>"></script>
 </body>
 </html>

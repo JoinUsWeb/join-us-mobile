@@ -69,7 +69,7 @@
                         <fieldset>
                             <div class="am-form-group">
                         <label for="r-email">E-mail</label>
-                        <input type="text" name="_email" id="r-email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
+                        <input type="email" name="_email" id="r-email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
                         <label for="r-nickname">Nick Name</label>
@@ -77,11 +77,11 @@
                             </div>
                             <div class="am-form-group">
                         <label for="r-password">Password</label>
-                        <input type="password" name="_password" id="r-password" minlength="3" placeholder="User Password" class="l-r-input" required/>
+                        <input type="password" name="_password" id="r-password" minlength="6" placeholder="User Password" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
                         <label for="r-password_to_confirm">Confirm Password</label>
-                        <input type="password" name="_password2" id="r-password_to_confirm" minlength="3" data-equal-to="#r-password" placeholder="Confirm Password" class="l-r-input" required/>
+                        <input type="password" name="_password2" id="r-password_to_confirm" data-equal-to="#r-password" placeholder="Confirm Password" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
                         <label for="r-telephone">Telephone</label>
@@ -94,6 +94,10 @@
                 </div>
                 <div data-tab-panel-1 class="am-tab-panel am-active">
                     <form action="<?php echo site_url('login'); ?>" id="form_login" method="post" class="am-form">
+                        <div class="am-alert am-alert-warning" style="margin-top: 5px" data-am-alert>
+                            <button type="button" class="am-close">&times;</button>
+                            用户名或密码错误！
+                        </div>
                         <fieldset>
                             <div class="am-form-group">
                         <label for="email">E-mail</label>
@@ -101,7 +105,7 @@
                             </div>
                             <div class="am-form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="_password" id="password" minlength="3" placeholder="User Password" class="l-r-input" required/>
+                        <input type="password" name="_password" id="password" minlength="6" placeholder="User Password" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" name="_agree" required="">已同意使用条约 </label></div>
                             <button class="myapp-login-button am-btn am-btn-secondary" id="l-submit" type="submit">LOGIN IN</button>

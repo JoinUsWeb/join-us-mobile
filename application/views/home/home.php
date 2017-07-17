@@ -26,17 +26,6 @@
     <link rel="icon" type="image/png" href="<?php echo base_url("images/i/favicon.png"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/amazeui.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("css/public.css"); ?>">
-
-    <!--[if (gte IE 9)|!(IE)]><!-->
-    <script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
-    <!--<![endif]-->
-    <!--[if lte IE 8 ]>
-    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-    <script src="<?php echo base_url(" assets/js/amazeui.ie8polyfill.min.js"); ?>"></script>
-    <![endif]-->
-    <script src="<?php echo base_url("assets/js/amazeui.min.js"); ?>"></script>
-    <script src="<?php echo base_url("js/public.js"); ?>"></script>
 </head>
 <body>
 
@@ -70,15 +59,8 @@
             </ul>
 
             <div class="am-topbar-right">
-                <a href="<?php echo site_url("register/index"); ?>">
-                    <button class="am-btn am-btn-default am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>注册
-                    </button>
-                </a>
-            </div>
-
-            <div class="am-topbar-right">
-                <a href="<?php echo site_url("login/index"); ?>">
-                    <button class="am-btn am-btn-danger am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登录
+                <a href="<?php echo site_url("log_off/index/u"); ?>">
+                    <button class="am-btn am-btn-default am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>注销
                     </button>
                 </a>
             </div>
@@ -665,5 +647,16 @@
         <p>Copyright © JoinUs Web. All rights reserved.</p>
     </div>
 </footer>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="<?php echo base_url(" assets/js/amazeui.ie8polyfill.min.js"); ?>"></script>
+<![endif]-->
+<script src="<?php echo base_url("assets/js/amazeui.min.js"); ?>"></script>
+<script src="<?php echo base_url("js/public.js"); ?>"></script>
 </body>
 </html>
