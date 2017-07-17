@@ -69,27 +69,27 @@
           </ul>
           <div class="am-tabs-bd">
               <div data-tab-panel-0 class="am-tab-panel am-active">
-                <form action="" class="am-form">
+                <form action="" id="register" class="am-form">
                     <fieldset>
                         <div class="am-form-group">
-                        <label for="doc-vld-name">E-mail</label>
-                        <input type="text" id="doc-vld-name" minlength="3" placeholder="Email Accounts" class="am-form-field" required/>
+                        <label for="r-email">E-mail</label>
+                        <input type="text" id="r-email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
                         </div>
                         <div class="am-form-group">
-                        <label for="doc-vld-name">Nick Name</label>
-                        <input type="text" id="doc-vld-name" minlength="3" placeholder="User Name" class="am-form-field" required/>
+                        <label for="r-nickname">Nick Name</label>
+                        <input type="text" id="r-nickname" minlength="3" placeholder="User Name" class="l-r-input" required/>
                         </div>
                         <div class="am-form-group">
-                        <label for="doc-vld-name">Password</label>
-                        <input type="password" id="doc-vld-name" minlength="3" placeholder="User Password" class="am-form-field" required/>
+                        <label for="r-password">Password</label>
+                        <input type="password" id="r-password" minlength="3" placeholder="User Password" class="l-r-input" required/>
                         </div>
                         <div class="am-form-group">
-                        <label for="doc-vld-name">Ponfirm Password</label>
-                        <input type="password" id="doc-vld-name" minlength="3" placeholder="Confirm Password" class="am-form-field" required/>
+                        <label for="r-password_to_confirm">Confirm Password</label>
+                        <input type="password" id="r-password_to_confirm" minlength="3" data-equal-to="#r-password" placeholder="Confirm Password" class="l-r-input" required/>
                         </div>
                         <div class="am-form-group">
-                        <label for="doc-vld-name">Telephone</label>
-                        <input type="tel" id="doc-vld-name" minlength="3" placeholder="Telephone Number" class="am-form-field" required/>
+                        <label for="r-telephone">Telephone</label>
+                        <input type="tel" id="r-telephone" minlength="11" maxlength="11" pattern="^1((3|5|8){1}\d{1}|70)\d{8}$" placeholder="Telephone Number" class="l-r-input" required/>
                         </div>
                         <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required="">已同意使用条约 </label></div>
                         <button class="myapp-login-button am-btn am-btn-secondary" type="submit">SIGN IN</button>
@@ -101,12 +101,12 @@
                 <form action="" class="am-form">
                     <fieldset>
                         <div class="am-form-group">
-                        <label for="doc-vld-name">E-mail</label>
-                        <input type="text" id="doc-vld-name" minlength="3" placeholder="Email Accounts" class="am-form-field" required/>
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
                         </div>
                         <div class="am-form-group">
-                        <label for="doc-vld-name">Password</label>
-                        <input type="password" id="doc-vld-name" minlength="3" placeholder="User Password" class="am-form-field" required/>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" minlength="3" placeholder="User Password" class="l-r-input" required/>
                         </div>
                         <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required="">已同意使用条约 </label></div>
                         <button class="myapp-login-button am-btn am-btn-secondary" type="submit">LOGIN IN</button>
@@ -125,7 +125,7 @@
 <!--[if lte IE 8 ]>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="../assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 <script src="../assets/js/amazeui.min.js"></script>
 <script src="../assets/js/app.js"></script>

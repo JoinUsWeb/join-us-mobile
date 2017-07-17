@@ -65,46 +65,46 @@
             </ul>
             <div class="am-tabs-bd">
                 <div data-tab-panel-0 class="am-tab-panel">
-                    <form action="<?php echo site_url('register'); ?>" method="post" class="am-form">
+                    <form action="<?php echo site_url('register'); ?>" id="form_register" method="post" class="am-form">
                         <fieldset>
                             <div class="am-form-group">
-                                <label for="doc-vld-name">E-mail</label>
-                                <input name="_email" type="text" id="doc-vld-name" minlength="3" placeholder="Email Accounts" class="am-form-field" required/>
+                        <label for="r-email">E-mail</label>
+                        <input type="text" name="_email" id="r-email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
-                                <label for="doc-vld-name">Nick Name</label>
-                                <input name="_nickName" type="text" id="doc-vld-name" minlength="3" placeholder="User Name" class="am-form-field" required/>
+                        <label for="r-nickname">Nick Name</label>
+                        <input type="text" name="_nickName" id="r-nickname" minlength="3" placeholder="User Name" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
-                                <label for="doc-vld-name">Password</label>
-                                <input name="_password" type="password" id="doc-vld-name" minlength="3" placeholder="User Password" class="am-form-field" required/>
+                        <label for="r-password">Password</label>
+                        <input type="password" name="_password" id="r-password" minlength="3" placeholder="User Password" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
-                                <label for="doc-vld-name">Ponfirm Password</label>
-                                <input name="_password2" type="password" id="doc-vld-name" minlength="3" placeholder="Confirm Password" class="am-form-field" required/>
+                        <label for="r-password_to_confirm">Confirm Password</label>
+                        <input type="password" name="_password2" id="r-password_to_confirm" minlength="3" data-equal-to="#r-password" placeholder="Confirm Password" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
-                                <label for="doc-vld-name">Telephone</label>
-                                <input name="_phoneNumber" type="tel" id="doc-vld-name" minlength="3" placeholder="Telephone Number" class="am-form-field" required/>
+                        <label for="r-telephone">Telephone</label>
+                        <input type="tel" name="_phoneNumber" id="r-telephone" minlength="11" maxlength="11" pattern="^1((3|5|8){1}\d{1}|70)\d{8}$" placeholder="Telephone Number" class="l-r-input" required/>
                             </div>
-                            <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required="">已同意使用条约 </label></div>
-                            <button class="myapp-login-button am-btn am-btn-secondary" type="submit">SIGN IN</button>
+                            <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" name="_agree" required="">已同意使用条约 </label></div>
+                            <button class="myapp-login-button am-btn am-btn-secondary" id="r-submit" type="submit">SIGN IN</button>
                         </fieldset>
                     </form>
                 </div>
                 <div data-tab-panel-1 class="am-tab-panel am-active">
-                    <form action="<?php echo site_url('login'); ?>" method="post"  class="am-form">
+                    <form action="<?php echo site_url('login'); ?>" id="form_login" method="post" class="am-form">
                         <fieldset>
                             <div class="am-form-group">
-                                <label for="doc-vld-name">E-mail</label>
-                                <input name="_email" type="text" id="doc-vld-name" minlength="3" placeholder="Email Accounts" class="am-form-field" required/>
+                        <label for="email">E-mail</label>
+                        <input type="email" name="_email" id="email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
                             </div>
                             <div class="am-form-group">
-                                <label for="doc-vld-name">Password</label>
-                                <input name="_password" type="password" id="doc-vld-name" minlength="3" placeholder="User Password" class="am-form-field" required/>
+                        <label for="password">Password</label>
+                        <input type="password" name="_password" id="password" minlength="3" placeholder="User Password" class="l-r-input" required/>
                             </div>
-                            <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required="">已同意使用条约 </label></div>
-                            <button class="myapp-login-button am-btn am-btn-secondary" type="submit">LOGIN IN</button>
+                            <div class="am-form-group myapp-login-treaty"><label class="am-form-label"></label><label class="am-checkbox-inline"> <input type="checkbox" name="_agree" required="">已同意使用条约 </label></div>
+                            <button class="myapp-login-button am-btn am-btn-secondary" id="l-submit" type="submit">LOGIN IN</button>
                         </fieldset>
                         <legend>Forgot Password?</legend>
                     </form>
@@ -128,6 +128,8 @@
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
 <script src="<?php echo base_url("assets/js/amazeui.ie8polyfill.min.js"); ?>"></script>
 <!--<![endif]-->
+<script src='https://cdn.bootcss.com/crypto-js/3.1.2/components/core-min.js' type='text/javascript'></script>
+<script src='https://cdn.bootcss.com/crypto-js/3.1.2/components/md5-min.js' type='text/javascript'></script>
 <script src="<?php echo base_url("assets/js/amazeui.min.js"); ?>"></script>
 <script src="<?php echo base_url("assets/js/app.js"); ?>"></script>
 </body>
