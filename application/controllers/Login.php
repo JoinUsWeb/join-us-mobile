@@ -16,21 +16,26 @@ class Login extends CI_Controller
         $this->load->model('User_model');
         $data['title'] = "登录";
         $data['page_name']="login";
+        $data['isInvalid'] = false;
 
         if ($this->session->has_userdata('user_id')){
             redirect('home');
             return;
         }
-        if ($this->form_process() == null) {
-            setcookie('email', set_value('_email'));
-            setcookie('password', set_value('_password'));
-            $user_id = $this->User_model->get_user_id_by_email(set_value('_email'));
 
-            $this->session->set_userdata(array(
-                'user_id' => $user_id,
-            ));
-            redirect('home');
-            return;
+        if (!empty($_POST)){
+            if ($this->form_process() == null) {
+                setcookie('email', set_value('_email'));
+                setcookie('password', set_value('_password'));
+                $user_id = $this->User_model->get_user_id_by_email(set_value('_email'));
+
+                $this->session->set_userdata(array(
+                    'user_id' => $user_id,
+                ));
+                redirect('home');
+                return;
+            }
+            $data['isInvalid'] = true;
         }
 
         $this->load->view('login_and_register/login', $data);

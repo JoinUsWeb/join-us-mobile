@@ -7,7 +7,7 @@
     <meta name="keywords" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>登录</title>
+    <title><?echo $title; ?></title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/amazeui.css"); ?>">
@@ -94,10 +94,12 @@
                 </div>
                 <div data-tab-panel-1 class="am-tab-panel am-active">
                     <form action="<?php echo site_url('login'); ?>" id="form_login" method="post" class="am-form">
-                        <div class="am-alert am-alert-warning" style="margin-top: 5px" data-am-alert>
+                        <?php if ($isInvalid) :?>
+                        <div class="am-alert am-alert-warning" style="margin-top: 10px;margin-bottom: -45px" data-am-alert>
                             <button type="button" class="am-close">&times;</button>
                             用户名或密码错误！
                         </div>
+                        <?endif;?>
                         <fieldset>
                             <div class="am-form-group">
                         <label for="email">E-mail</label>
