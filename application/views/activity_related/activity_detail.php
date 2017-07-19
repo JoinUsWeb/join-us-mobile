@@ -67,14 +67,23 @@
                     </ul>
                 </li>
             </ul>
+            <?php if (!isset($this->session->user_id)) { ?>
 
-            <div class="am-topbar-right">
-                <a href="<?php echo site_url("register/index"); ?>"><button class="am-btn am-btn-default am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>注册</button></a>
-            </div>
+                <div class="am-topbar-right">
+                    <a href="<?php echo site_url("register/index"); ?>"><button class="am-btn am-btn-default am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>注册</button></a>
+                </div>
 
-            <div class="am-topbar-right">
-                <a href="<?php echo site_url("login/index"); ?>"><button class="am-btn am-btn-danger am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登录</button></a>
-            </div>
+                <div class="am-topbar-right">
+                    <a href="<?php echo site_url("login/index"); ?>"><button class="am-btn am-btn-danger am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登录</button></a>
+                </div>
+            <?php } else { ?>
+                <div class="am-topbar-right">
+                    <a href="<?php echo site_url("log_off/index/u"); ?>">
+                        <button class="am-btn am-btn-default am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>注销
+                        </button>
+                    </a>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </header>
