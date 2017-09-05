@@ -1251,6 +1251,7 @@ select {
 @media only screen {
   .am-avg-sm-1 > li {
     width: 100%;
+
   }
   .am-avg-sm-1 > li:nth-of-type(n) {
     clear: none;
@@ -11508,7 +11509,7 @@ tbody.am-collapse.am-in {
 }
 .am-gallery-default .am-gallery-item img {
   width: 100%;
-  height: auto;
+  height: 175px;
 }
 .am-gallery-default .am-gallery-title {
   margin-top: 10px;
