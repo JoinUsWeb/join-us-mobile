@@ -42,11 +42,14 @@
                 <li><a href="<?php echo site_url("create_activity/index"); ?>">创建活动</a></li>
                 <li class="am-dropdown" data-am-dropdown>
                     <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                        地区 <span class="am-icon-caret-down"></span>
+                        个人中心 <span class="am-icon-caret-down"></span>
                     </a>
                     <ul class="am-dropdown-content">
-                        <li><a href="#">上海</a></li>
-                        <li><a href="#">其他</a></li>
+                        <li><a href="#">个人信息</a></li>
+                        <li><a href="#">我的活动</a></li>
+                        <li><a href="#">我的消息</a></li>
+                        <li><a href="#">我的小组</a></li>
+                        <li><a href="#">关于我们</a></li>
                     </ul>
                 </li>
             </ul>

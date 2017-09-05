@@ -94,13 +94,13 @@
                 </div>
                 <div data-tab-panel-1 class="am-tab-panel am-active">
                     <form action="<?php echo site_url('login'); ?>" id="form_login" method="post" class="am-form">
+                        <fieldset>
                         <?php if ($isInvalid) :?>
-                        <div class="am-alert am-alert-warning" style="margin-top: 10px;margin-bottom: -45px" data-am-alert>
+                        <div class="am-alert am-alert-warning"  data-am-alert>
                             <button type="button" class="am-close">&times;</button>
                             用户名或密码错误！
                         </div>
                         <?endif;?>
-                        <fieldset>
                             <div class="am-form-group">
                         <label for="email">E-mail</label>
                         <input type="email" name="_email" id="email" minlength="3" placeholder="Email Accounts" class="l-r-input" required/>
