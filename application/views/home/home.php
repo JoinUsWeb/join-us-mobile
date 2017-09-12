@@ -139,30 +139,6 @@
                 </div>
             </li>
             <?php endforeach; ?>
-            <li>
-                <div class="am-gallery-item">
-                    <a href="http://s.amazeui.org/media/i/demos/bing-2.jpg" class="">
-                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方"/>
-                        <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
-                        <div class="am-gallery-desc">
-                            <div class="am-fr">北京</div>
-                            <div class="am-fl">2016/11/11</div>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="am-gallery-item">
-                    <a href="http://s.amazeui.org/media/i/demos/bing-2.jpg" class="">
-                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方"/>
-                        <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
-                        <div class="am-gallery-desc">
-                            <div class="am-fr">北京</div>
-                            <div class="am-fl">2016/11/11</div>
-                        </div>
-                    </a>
-                </div>
-            </li>
         </ul>
 
     </div>
