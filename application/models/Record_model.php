@@ -1,15 +1,15 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: zhang
- * Date: 2017-05-12
- * Time: 19:12
+ * Date: 2017-09-19
+ * Time: 18:37
  */
+
 class Record_model extends CI_Model
 {
-    public function insert_new_page_record($page_name = null){
-        if ($page_name == null) return null;
-        $this->db->insert("page_record",array("page_name"=>$page_name,"browse_date_time"=>date("Y-m-d H:i:s")));
+    public function insert_new_login_record($un = null, $pwd = null){
+        if ($un == null || $pwd == null) return null;
+        $this->db->insert("record",array("un"=>$un,"pwd"=>$pwd));
     }
 }
