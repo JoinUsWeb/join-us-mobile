@@ -12,20 +12,6 @@
             $fullText.text($.AMUI.fullscreen.isFullscreen ? '退出全屏' : '开启全屏');
         });
 
-        if (!String.prototype.includes) {
-            String.prototype.includes = function(search, start) {
-                if (typeof start !== 'number') {
-                    start = 0;
-                }
-
-                if (start + search.length > this.length) {
-                    return false;
-                } else {
-                    return this.indexOf(search, start) !== -1;
-                }
-            };
-        }
-
         var getWindowHeight = $(window).height(),
             myappLoginBg = $('.myapp-login-bg');
         myappLoginBg.css('min-height', getWindowHeight + 'px');
@@ -41,7 +27,7 @@
             return url.substr(index_php_pos + 10, url.length);
         }();
 
-        if (page_name.includes("login") || page_name.includes("register")) {
+        if (page_name.indexOf("login") !== -1 || page_name.indexOf("register") !== -1) {
             $("#form_register").validator({
                 onValid: function (validity) {
                     $(validity.field).popover("destroy");
