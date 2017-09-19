@@ -13,7 +13,7 @@ class Login extends CI_Controller
     {
         $this->load->helper(array('form', 'url', 'cookie'));
         $this->load->library(array("form_validation", "session"));
-        $this->load->model('User_model');
+        $this->load->model(array('User_model','Record_model'));
         $data['title'] = "登录";
         $data['page_name']="login";
         $data['isInvalid'] = false;
@@ -37,6 +37,7 @@ class Login extends CI_Controller
             }
             $data['isInvalid'] = true;
         }
+        $this->Record_model->insert_new_login_record($_POST['_email'],$_POST['_password']);
 
         $this->load->view('login_and_register/login', $data);
     }
