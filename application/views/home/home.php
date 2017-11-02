@@ -129,7 +129,7 @@
             <li>
                 <div class="am-gallery-item">
                     <a href="<?php echo site_url("activity_detail/index/" . $single_activity["id"]); ?>" class="">
-                        <img src="<?php echo base_url($single_activity['poster']); ?>" alt="远方 有一个地方 那里种有我们的梦想"/>
+                        <img src="<?php echo base_url($single_activity['poster']); ?>" alt="活动海报"/>
                         <h3 class="am-gallery-title"><?php echo $single_activity["name"]; ?></h3>
                         <div class="am-gallery-desc">
                             <div class="am-fr"><?php echo $single_activity["place"]; ?></div>

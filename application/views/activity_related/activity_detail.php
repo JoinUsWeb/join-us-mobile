@@ -198,76 +198,18 @@
         </div>
         <div class="users">
             <ul class="am-avg-sm-5 am-avg-md-5 am-avg-lg-5 am-thumbnails">
+                <?foreach ($member as $member_item) :?>
                 <li class="member_review_main">
                     <div class="member_review_person">
                         <div class="person_headphoto">
-                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
+                            <a href="html/details_page.html" ><img src="<?php echo base_url($member_item['avatar']); ?>" alt="" width="60px" height="60px"></a>
                         </div>
                         <div class="person_id_name">
-                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
+                            <a href="html/details_page.html" ><h5><?php echo $member_item['nick_name']; ?></h5></a>
                         </div>
                     </div>
                 </li>
-                <li class="member_review_main">
-                    <div class="member_review_person">
-                        <div class="person_headphoto">
-                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
-                        </div>
-                        <div class="person_id_name">
-                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
-                        </div>
-                    </div>
-                </li>
-                <li class="member_review_main">
-                    <div class="member_review_person">
-                        <div class="person_headphoto">
-                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
-                        </div>
-                        <div class="person_id_name">
-                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
-                        </div>
-                    </div>
-                </li>
-                <li class="member_review_main">
-                    <div class="member_review_person">
-                        <div class="person_headphoto">
-                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
-                        </div>
-                        <div class="person_id_name">
-                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
-                        </div>
-                    </div>
-                </li>
-                <li class="member_review_main">
-                    <div class="member_review_person">
-                        <div class="person_headphoto">
-                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
-                        </div>
-                        <div class="person_id_name">
-                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
-                        </div>
-                    </div>
-                </li>
-                <li class="member_review_main">
-                    <div class="member_review_person">
-                        <div class="person_headphoto">
-                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
-                        </div>
-                        <div class="person_id_name">
-                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
-                        </div>
-                    </div>
-                </li>
-                <li class="member_review_main">
-                    <div class="member_review_person">
-                        <div class="person_headphoto">
-                            <a href="html/details_page.html" ><img src="../img/01.jpg" alt="" width="60px" height="60px"></a>
-                        </div>
-                        <div class="person_id_name">
-                            <a href="html/details_page.html" ><h5>金鑫</h5></a>
-                        </div>
-                    </div>
-                </li>
+                <? endforeach; ?>
             </ul>
         </div>
 
