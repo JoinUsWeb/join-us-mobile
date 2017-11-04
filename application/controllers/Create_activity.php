@@ -91,7 +91,7 @@ class Create_activity extends CI_Controller
 
     public function create_activity_no_poster($data)
     {
-        $poster_path = 'img/first_label_' . $data['first_label_id'] . '.jpg';
+        $poster_path = 'img/default_post/first_label_' . $data['first_label_id'] . '.jpg';
         $this->create_activity($data, $poster_path);
     }
 

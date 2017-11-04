@@ -147,7 +147,7 @@
 
                         <div class="am-u-sm-4 am-u-md-5 am-u-lg-5 am-vertical-align">
                             <div class="am-vertical-align-middle">
-                                <img src="<?php echo base_url("Temp-images/face1.jpg"); ?>">
+                                <img src="<?php echo base_url('img/default_poster/first_label_' . $first_label_item['id'] . '.jpg'); ?>">
                             </div>
                         </div>
                         <div class="am-u-sm-8 am-u-md-7 am-u-lg-7">
