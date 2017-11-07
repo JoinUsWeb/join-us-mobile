@@ -166,40 +166,12 @@
                 <div class="cattlist_3">
                     <button type="button" class="am-btn am-btn-warning" onclick="window.location.href = '<?php echo site_url('search_activity/label/'.$first_label_item['id']); ?>'">
                         <i class="am-icon-plus"></i>
-                        进入小组
+                        进入板块
                     </button>
                 </div>
             </div>
         </li>
         <?php endforeach; ?>
-    </ul>
-</div>
-
-<div class="am-container" style="margin: 100px auto">
-    <ul data-am-widget="pagination" class="am-pagination am-pagination-default am-text-center">
-
-        <li class="am-pagination-first ">
-            <a href="#" class="">第一页</a>
-        </li>
-
-        <li class="am-pagination-prev ">
-            <a href="#" class="">上一页</a>
-        </li>
-
-
-        <li class="">
-            <a href="#" class="">1</a>
-        </li>
-        <li >
-            <a href="#">2</a>
-        </li>
-        <li class="am-pagination-next ">
-            <a href="#" class="">下一页</a>
-        </li>
-
-        <li class="am-pagination-last ">
-            <a href="#" class="">最末页</a>
-        </li>
     </ul>
 </div>
 
