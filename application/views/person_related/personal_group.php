@@ -35,7 +35,7 @@
                                         <h3>小组成员</h3>
                                         <hr>
                                         <div class="group_creater">     <!--组长-->
-                                            <a href="../html/personal_data.html"><img
+                                            <a href="#"><img
                                                     src="<?php echo base_url($joined_group_item['leader']['avatar']); ?>"></a>
                                             <p><?php echo $joined_group_item['leader']['nick_name']; ?></p>
                                         </div>
@@ -46,7 +46,7 @@
                                                     foreach ($joined_group_item['members'] as $member_item):
                                                         ?>
                                                         <li>
-                                                            <a href="../html/personal_data.html">
+                                                            <a href="#">
                                                                 <img src="<?php echo base_url($member_item['avatar']); ?>"></a>
                                                             <p><?php echo $member_item['nick_name']; ?></p>
                                                         </li>

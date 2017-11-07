@@ -93,7 +93,7 @@
             <div data-am-widget="slider" class="am-slider am-slider-c1" data-am-slider='{"directionNav":false}' >
                 <ul class="am-slides">
                     <li>
-                        <a href="events_show.html"><img src="<?php echo base_url($activity['poster']); ?>"></a>
+                        <a href="#"><img src="<?php echo base_url($activity['poster']); ?>"></a>
                         <div class="am-slider-desc"><?php echo $activity['name']; ?></div>
 
                     </li>
@@ -202,10 +202,10 @@
                 <li class="member_review_main">
                     <div class="member_review_person">
                         <div class="person_headphoto">
-                            <a href="html/details_page.html" ><img src="<?php echo base_url($member_item['avatar']); ?>" alt="" width="60px" height="60px"></a>
+                            <a href="#" ><img src="<?php echo base_url($member_item['avatar']); ?>" alt="" width="60px" height="60px"></a>
                         </div>
                         <div class="person_id_name">
-                            <a href="html/details_page.html" ><h5><?php echo $member_item['nick_name']; ?></h5></a>
+                            <a href="#" ><h5><?php echo $member_item['nick_name']; ?></h5></a>
                         </div>
                     </div>
                 </li>

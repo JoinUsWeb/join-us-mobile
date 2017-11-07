@@ -20,7 +20,7 @@
                                 <h3>小组成员</h3>
                                 <hr>
                                 <div class="group_creater">     <!--组长-->
-                                    <a href="../html/personal_data.html">
+                                    <a href="#">
                                         <img src="<?php echo base_url($group['leader']['avatar']);?>"></a>
                                     <p><?php echo $group['leader']['nick_name'];?>(组长)</p>
                                 </div>
@@ -30,7 +30,7 @@
                                         if(!empty($group['members']))
                                         foreach ($group['members'] as $member_item):?>
                                             <li>
-                                                <a href="../html/personal_data.html">
+                                                <a href="#">
                                                     <img src="<?php echo base_url($member_item['avatar']);?>"></a>
                                                 <p><?php echo $member_item['nick_name'];?></p>
                                             </li>
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="recenthd_rightbar">
                                     <div class="recent_hd_title">
-                                        <a class="recent_hd" href="../html/details_page.html">华东师范大学第一届ColorRun比赛</a>
+                                        <a class="recent_hd" href="#">华东师范大学第一届ColorRun比赛</a>
                                     </div>
                                     <div class="recent_hd_detials">
                                         （活动简介大约50字左右）我们在用户注册时提供一级兴趣选择（一级兴趣包括：娱乐、体育、科技、美食、军事、历史、社会、旅游、影视、其他等，一级兴趣下再细化二级兴趣），多级区域选择，及其所处年龄层等信息......
